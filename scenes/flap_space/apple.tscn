@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bgax034gbnmoq"]
+
+[ext_resource type="Texture2D" uid="uid://cac06wbsbuxdb" path="res://sprites/flap_space/Apple.png" id="1_5tucu"]
+[ext_resource type="Script" uid="uid://bk0iddt4a3rp7" path="res://scripts/flap_space/apple.gd" id="1_mmcad"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmcad"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_5tucu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AppleSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mmcad"]
+resource_name = "idle"
+length = 0.56667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AppleSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.4666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ywei"]
+_data = {
+&"RESET": SubResource("Animation_5tucu"),
+&"idle": SubResource("Animation_mmcad")
+}
+
+[node name="FlapSpaceApple" type="Area2D" unique_id=616807086]
+script = ExtResource("1_mmcad")
+
+[node name="AppleSprite" type="Sprite2D" parent="." unique_id=1998191128]
+texture = ExtResource("1_5tucu")
+hframes = 17
+
+[node name="AppleCollider" type="CollisionShape2D" parent="." unique_id=502200070]
+shape = SubResource("CircleShape2D_mmcad")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=510095996]
+libraries/ = SubResource("AnimationLibrary_4ywei")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b8mv8a3uhwrnx" path="res://scripts/flap_space/flap_space.gd" id="1_dvdvc"]
 [ext_resource type="PackedScene" uid="uid://b04nrqy12u7qj" path="res://scenes/flap_space/flap_space_player.tscn" id="1_qnmmh"]
 [ext_resource type="PackedScene" uid="uid://ce3ddmsc7vyl0" path="res://scenes/flap_space/pipe.tscn" id="3_rliwv"]
+[ext_resource type="Shader" uid="uid://dsinbasrwt6nn" path="res://shaders/bg_scroll.gdshader" id="4_5wdly"]
+[ext_resource type="Texture2D" uid="uid://b4vnldc43p10l" path="res://sprites/backgrounds/Blue.png" id="4_6v6nq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qnmmh"]
 distance = -160.0
@@ -11,14 +13,18 @@ distance = -160.0
 normal = Vector2(0, 1)
 distance = -160.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvtws"]
+shader = ExtResource("4_5wdly")
+shader_parameter/motion = Vector2(0, 0)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 0)
+
 [node name="FlapSpace" type="Node2D" unique_id=669773467]
 script = ExtResource("1_dvdvc")
 
 [node name="Player" parent="." unique_id=1338784251 instance=ExtResource("1_qnmmh")]
+unique_name_in_owner = true
 position = Vector2(-263, -23)
-
-[node name="Pipe" parent="." unique_id=574079942 instance=ExtResource("3_rliwv")]
-position = Vector2(121, 48)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=699777825]
 zoom = Vector2(2.25, 2.25)
@@ -35,3 +41,27 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1110055665]
 shape = SubResource("WorldBoundaryShape2D_dvdvc")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1152461244]
+layer = -1
+
+[node name="BackgroundTexture" type="TextureRect" parent="BackgroundLayer" unique_id=1411305834]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_tvtws")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6v6nq")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=839767218]
+unique_name_in_owner = true
+wait_time = 3.0
+
+[node name="Pipe" parent="." unique_id=574079942 instance=ExtResource("3_rliwv")]
+position = Vector2(500, 9)
+
+[connection signal="timeout" from="SpawnTimer" to="Player" method="_on_spawn_timer_timeout"]
