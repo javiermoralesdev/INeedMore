@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b04nrqy12u7qj"]
+
+[ext_resource type="Script" uid="uid://cxn0ajf33ncj3" path="res://scripts/flap_space/flap_space_player.gd" id="1_i42r8"]
+[ext_resource type="Texture2D" uid="uid://btnhgpstdplnc" path="res://sprites/flap_space/Jump (32x32).png" id="1_r54nq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i42r8"]
+size = Vector2(16, 28)
+
+[node name="Player" type="CharacterBody2D" unique_id=1338784251]
+script = ExtResource("1_i42r8")
+metadata/_edit_group_ = true
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1627384259]
+texture = ExtResource("1_r54nq")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=325113906]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_i42r8")

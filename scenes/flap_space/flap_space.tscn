@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dt51h4bpiwrli"]
+
+[ext_resource type="Script" uid="uid://b8mv8a3uhwrnx" path="res://scripts/flap_space/flap_space.gd" id="1_dvdvc"]
+[ext_resource type="PackedScene" uid="uid://b04nrqy12u7qj" path="res://scenes/flap_space/flap_space_player.tscn" id="1_qnmmh"]
+[ext_resource type="PackedScene" uid="uid://ce3ddmsc7vyl0" path="res://scenes/flap_space/pipe.tscn" id="3_rliwv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qnmmh"]
+distance = -160.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dvdvc"]
+normal = Vector2(0, 1)
+distance = -160.0
+
+[node name="FlapSpace" type="Node2D" unique_id=669773467]
+script = ExtResource("1_dvdvc")
+
+[node name="Player" parent="." unique_id=1338784251 instance=ExtResource("1_qnmmh")]
+position = Vector2(-263, -23)
+
+[node name="Pipe" parent="." unique_id=574079942 instance=ExtResource("3_rliwv")]
+position = Vector2(121, 48)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=699777825]
+zoom = Vector2(2.25, 2.25)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1536863941]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=7312710]
+shape = SubResource("WorldBoundaryShape2D_qnmmh")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=608725240]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1110055665]
+shape = SubResource("WorldBoundaryShape2D_dvdvc")

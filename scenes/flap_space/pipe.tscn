@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ce3ddmsc7vyl0"]
+
+[ext_resource type="Texture2D" uid="uid://0c7p4fg54syb" path="res://sprites/flap_space/Terrain (16x16).png" id="1_1pflm"]
+[ext_resource type="Script" uid="uid://cp07bubb4xnkv" path="res://scripts/flap_space/pipe.gd" id="1_ab5va"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab5va"]
+size = Vector2(54, 222)
+
+[node name="Pipe" type="Area2D" unique_id=574079942]
+script = ExtResource("1_ab5va")
+
+[node name="PipeSpriteUp" type="Sprite2D" parent="." unique_id=1159795611]
+position = Vector2(0.49999815, 213)
+scale = Vector2(3.8124998, 4.6874995)
+texture = ExtResource("1_1pflm")
+region_enabled = true
+region_rect = Rect2(239.53473, -0.4329214, 16.826477, 48.75952)
+
+[node name="PipeCollisionUp" type="CollisionShape2D" parent="." unique_id=1276385369]
+position = Vector2(0.4999981, 213.5)
+shape = SubResource("RectangleShape2D_ab5va")
+
+[node name="PipeSpriteDown" type="Sprite2D" parent="." unique_id=1130577022]
+position = Vector2(0.49999815, -225.49998)
+scale = Vector2(3.8124998, 4.6874995)
+texture = ExtResource("1_1pflm")
+region_enabled = true
+region_rect = Rect2(239.53473, -0.4329214, 16.826477, 48.75952)
+
+[node name="PipeCollisionDown" type="CollisionShape2D" parent="." unique_id=624903391]
+position = Vector2(0.4999981, -225.5)
+shape = SubResource("RectangleShape2D_ab5va")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1699819144]
+rect = Rect2(-10, -30, 20, 58)
+
+[node name="DeathTimer" type="Timer" parent="." unique_id=2066349985]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
