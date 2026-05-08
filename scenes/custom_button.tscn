@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://pugxas62m05y"]
+
+[ext_resource type="Theme" uid="uid://db1s62h1i64vl" path="res://themes/minigame_button.tres" id="1_ql6db"]
+[ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="2_bfr1r"]
+[ext_resource type="Script" uid="uid://c84k07n3mlvr3" path="res://scripts/custom_button.gd" id="3_32hcy"]
+[ext_resource type="AudioStream" uid="uid://ejtld5jrjk81" path="res://sounds/hover.wav" id="4_qw48a"]
+[ext_resource type="AudioStream" uid="uid://0na84507p3mt" path="res://sounds/press.wav" id="5_8n5nm"]
+
+[node name="CustomButton" type="Button" unique_id=403282519]
+offset_right = 122.0
+offset_bottom = 58.0
+theme = ExtResource("1_ql6db")
+theme_override_colors/font_pressed_color = Color(0.0051989057, 0.005198906, 0.0051989057, 1)
+theme_override_colors/font_hover_color = Color(0.35606405, 0.35606432, 0.35606512, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bfr1r")
+theme_override_font_sizes/font_size = 125
+text = "Button"
+script = ExtResource("3_32hcy")
+
+[node name="HoverPlayer" type="AudioStreamPlayer" parent="." unique_id=290653011]
+stream = ExtResource("4_qw48a")
+bus = &"Sound"
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=202347319]
+stream = ExtResource("5_8n5nm")
+bus = &"Sound"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

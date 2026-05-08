@@ -15,9 +15,14 @@ run/main_scene="uid://dt51h4bpiwrli"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://b8o5p7hcrolwr"
+
 [autoload]
 
 Global="*uid://mhytylctj5ey"
+Transition="*uid://ce61uk2kewdwt"
 
 [debug]
 
@@ -38,6 +43,10 @@ tap={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.es.translation")
 
 [physics]
 

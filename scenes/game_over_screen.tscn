@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dhib010dlwwa4"]
+
+[ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="1_61w2s"]
+[ext_resource type="Script" uid="uid://b67oge5xlty8q" path="res://scripts/game_over_screen.gd" id="1_jw6e5"]
+[ext_resource type="PackedScene" uid="uid://pugxas62m05y" path="res://scenes/custom_button.tscn" id="2_jw6e5"]
+
+[sub_resource type="Animation" id="Animation_jw6e5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(414, 955)]
+}
+
+[sub_resource type="Animation" id="Animation_wa2qn"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(414, 955), Vector2(421, 58)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cyfkl"]
+_data = {
+&"RESET": SubResource("Animation_jw6e5"),
+&"show": SubResource("Animation_wa2qn")
+}
+
+[node name="GameOverScreen" type="ColorRect" unique_id=112611397]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = 595.0
+offset_right = 212.0
+offset_bottom = 1199.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.54509807)
+script = ExtResource("1_jw6e5")
+
+[node name="Label" type="Label" parent="." unique_id=590554662]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_61w2s")
+theme_override_font_sizes/font_size = 150
+text = "game_over"
+horizontal_alignment = 1
+
+[node name="RetryButton" parent="." unique_id=403282519 instance=ExtResource("2_jw6e5")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 152.0
+offset_right = 74.0
+offset_bottom = 223.0
+grow_horizontal = 2
+text = "retry"
+
+[node name="MainMenuButton" parent="." unique_id=1464951242 instance=ExtResource("2_jw6e5")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 270.0
+offset_right = 74.0
+offset_bottom = 341.0
+grow_horizontal = 2
+text = "main_menu"
+
+[node name="EndDayButton" parent="." unique_id=1850558054 instance=ExtResource("2_jw6e5")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 410.0
+offset_right = 74.0
+offset_bottom = 481.0
+grow_horizontal = 2
+text = "end_day"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2084554346]
+libraries/ = SubResource("AnimationLibrary_cyfkl")
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="EndDayButton" to="." method="_on_end_day_button_pressed"]

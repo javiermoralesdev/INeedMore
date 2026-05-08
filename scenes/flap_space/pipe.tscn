@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bgax034gbnmoq" path="res://scenes/flap_space/apple.tscn" id="3_14526"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab5va"]
-size = Vector2(41.5, 199.50003)
+size = Vector2(54, 214)
 
 [node name="Pipe" type="Area2D" unique_id=574079942]
 script = ExtResource("1_ab5va")
@@ -18,7 +18,7 @@ region_enabled = true
 region_rect = Rect2(239.53473, -0.4329214, 16.826477, 48.75952)
 
 [node name="PipeCollisionUp" type="CollisionShape2D" parent="." unique_id=1276385369]
-position = Vector2(0.4999981, 172)
+position = Vector2(0.4999981, 170)
 shape = SubResource("RectangleShape2D_ab5va")
 
 [node name="PipeSpriteDown" type="Sprite2D" parent="." unique_id=1130577022]
@@ -29,7 +29,7 @@ region_enabled = true
 region_rect = Rect2(239.53473, -0.4329214, 16.826477, 48.75952)
 
 [node name="PipeCollisionDown" type="CollisionShape2D" parent="." unique_id=624903391]
-position = Vector2(-1, -179)
+position = Vector2(-1, -177.875)
 shape = SubResource("RectangleShape2D_ab5va")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1699819144]

@@ -1,13 +1,15 @@
 class_name FlapSpacePlayer
 extends CharacterBody2D
 
+signal on_die
+
 const JUMP_VELOCITY: float = -200.0
 const gravity: float = 5
 const FALL_THRESSHOLD: int = 100
 const BASE_SPEED: int = 100
 
 var pipe_speed: int = 100
-var points: int = 0
+var score: int = 0
 
 @onready var jump_texture: Texture = preload("res://sprites/flap_space/Jump (32x32).png")
 @onready var fall_texture: Texture = preload("res://sprites/flap_space/Fall (32x32).png")
@@ -16,8 +18,11 @@ var points: int = 0
 var dead: bool = false 
 var start: bool = false
 
+func _ready() -> void:
+	%CRTShader.visible = true
+
 func _physics_process(_delta: float) -> void:
-	var new_speed: int = BASE_SPEED + (points * 10)
+	var new_speed: int = BASE_SPEED + (score * 10)
 	pipe_speed = new_speed
 	if start and not dead:
 		%BackgroundTexture.material.set_shader_parameter("motion", Vector2(new_speed, 0))
@@ -31,8 +36,11 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("tap") and not dead:
 		velocity.y = JUMP_VELOCITY
+		$JumpPlayer.play()
 		if not start:
 			start = true
+			%StartLabel.queue_free()
+			%ScoreLabel.visible = true
 			%SpawnTimer.start()
 	if velocity.y < 0:
 		$PlayerSprite.texture = jump_texture
@@ -41,14 +49,25 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func die() -> void:
+	if dead:
+		return
+	%ScoreLabel.visible = false
+	on_die.emit()
 	pipe_speed = 0
 	dead = true
 	$PlayerSprite.modulate = Color.RED
 	%BackgroundTexture.material.set_shader_parameter("motion", Vector2.ZERO)
+	%GameOverScreen.trigger()
 
 
 func _on_spawn_timer_timeout() -> void:
-	var pipe_instance: Area2D = pipe_prefab.instantiate()
+	var pipe_instance: Pipe = pipe_prefab.instantiate()
 	pipe_instance.position = Vector2(500, 0);
-	get_tree().root.add_child(pipe_instance)
-	print("Generación")
+	pipe_instance.player = self
+	
+	get_parent().add_child(pipe_instance)
+
+func add_score(amount: int) -> void:
+	score += amount
+	%ScoreLabel.text = str(score)
+	%CoinPlayer.play()

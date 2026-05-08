@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b8mv8a3uhwrnx" path="res://scripts/flap_space/flap_space.gd" id="1_dvdvc"]
 [ext_resource type="PackedScene" uid="uid://b04nrqy12u7qj" path="res://scenes/flap_space/flap_space_player.tscn" id="1_qnmmh"]
-[ext_resource type="PackedScene" uid="uid://ce3ddmsc7vyl0" path="res://scenes/flap_space/pipe.tscn" id="3_rliwv"]
 [ext_resource type="Shader" uid="uid://dsinbasrwt6nn" path="res://shaders/bg_scroll.gdshader" id="4_5wdly"]
 [ext_resource type="Texture2D" uid="uid://b4vnldc43p10l" path="res://sprites/backgrounds/Blue.png" id="4_6v6nq"]
+[ext_resource type="Shader" uid="uid://jjrqsxm86deh" path="res://shaders/crt.gdshader" id="5_5wdly"]
+[ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="5_tvtws"]
+[ext_resource type="PackedScene" uid="uid://dhib010dlwwa4" path="res://scenes/game_over_screen.tscn" id="6_mhgp2"]
+[ext_resource type="AudioStream" uid="uid://c3loxbg17yqp4" path="res://sounds/apple_pickup.mp3" id="8_swklx"]
+[ext_resource type="AudioStream" uid="uid://ckt8ilu74wkmt" path="res://music/FlapSpace.ogg" id="9_cko7i"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qnmmh"]
 distance = -160.0
@@ -18,6 +22,32 @@ shader = ExtResource("4_5wdly")
 shader_parameter/motion = Vector2(0, 0)
 shader_parameter/scale = 1.0
 shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhgp2"]
+shader = ExtResource("5_5wdly")
+shader_parameter/pixel_size = 2.0
+shader_parameter/lod_blur = 0.7
+shader_parameter/chroma_offset_px = 0.8
+shader_parameter/saturation = 0.78
+shader_parameter/contrast = 0.9
+shader_parameter/shadow_lift = 0.06
+shader_parameter/scanline_strength = 0.04
+shader_parameter/vignette_strength = 0.1
+shader_parameter/noise_strength = 0.025
+shader_parameter/noise_speed = 5.0
+shader_parameter/base_jitter_px = 0.08
+shader_parameter/base_jitter_speed = 12.0
+shader_parameter/glitchiness = 0.50000002375
+shader_parameter/glitch_rate = 6.0
+shader_parameter/glitch_shift_px = 1.8
+shader_parameter/glitch_window_min = 0.03
+shader_parameter/glitch_window_max = 0.1
+shader_parameter/blue_band_start_y = 0.45
+shader_parameter/blue_band_speed = 0.06
+shader_parameter/blue_band_width = 0.035
+shader_parameter/blue_band_strength = 0.1
+shader_parameter/blue_band_glitch = 0.25
+shader_parameter/blue_band_distort_px = 1.2
 
 [node name="FlapSpace" type="Node2D" unique_id=669773467]
 script = ExtResource("1_dvdvc")
@@ -61,7 +91,60 @@ stretch_mode = 1
 unique_name_in_owner = true
 wait_time = 3.0
 
-[node name="Pipe" parent="." unique_id=574079942 instance=ExtResource("3_rliwv")]
-position = Vector2(500, 9)
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1138748538]
+layer = 5
+
+[node name="ScoreLabel" type="Label" parent="UILayer" unique_id=953261735]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -153.0
+offset_top = -1.0
+offset_right = -17.0
+offset_bottom = 169.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("5_tvtws")
+theme_override_font_sizes/font_size = 300
+text = "0"
+horizontal_alignment = 2
+
+[node name="StartLabel" type="Label" parent="UILayer" unique_id=173197835]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_tvtws")
+theme_override_font_sizes/font_size = 400
+text = "tap_to_play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverScreen" parent="UILayer" unique_id=112611397 instance=ExtResource("6_mhgp2")]
+unique_name_in_owner = true
+
+[node name="CRTShader" type="ColorRect" parent="UILayer" unique_id=2133107440]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_mhgp2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CoinPlayer" type="AudioStreamPlayer" parent="." unique_id=638805606]
+unique_name_in_owner = true
+stream = ExtResource("8_swklx")
+bus = &"Sound"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=842953376]
+stream = ExtResource("9_cko7i")
+autoplay = true
+bus = &"Music"
 
 [connection signal="timeout" from="SpawnTimer" to="Player" method="_on_spawn_timer_timeout"]
