@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://brc3346jfgtg3"]
+
+[ext_resource type="Script" uid="uid://d0kut1x6xv7lh" path="res://scripts/snake/snake.gd" id="1_4ska3"]
+[ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="2_uqw23"]
+[ext_resource type="PackedScene" uid="uid://dhib010dlwwa4" path="res://scenes/game_over_screen.tscn" id="3_h1wbu"]
+[ext_resource type="AudioStream" uid="uid://bgtqbom2pqq3c" path="res://sounds/apple_pickup.wav" id="4_reko3"]
+[ext_resource type="AudioStream" uid="uid://ca1tlaiiof8jt" path="res://sounds/flap.wav" id="5_ai5so"]
+[ext_resource type="AudioStream" uid="uid://btjqsvuw6of78" path="res://music/Snake.ogg" id="6_0va0l"]
+[ext_resource type="PackedScene" uid="uid://13dy0apv0pdl" path="res://scenes/background_texture.tscn" id="7_0va0l"]
+[ext_resource type="Texture2D" uid="uid://buwo3l6xa4hxv" path="res://sprites/backgrounds/Green.png" id="8_bxd63"]
+
+[node name="Snake" type="Node2D" unique_id=475722492]
+script = ExtResource("1_4ska3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=397824559]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1013073704]
+position = Vector2(134, -360)
+
+[node name="LeftCover" type="ColorRect" parent="." unique_id=1850805360]
+offset_left = -1572.0
+offset_top = -360.0
+offset_right = -360.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1998708673]
+offset_left = 360.0
+offset_top = -360.0
+offset_right = 2800.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=598944013]
+
+[node name="ScoreLabel" type="Label" parent="UILayer" unique_id=425283628]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -66.0
+offset_bottom = 170.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_uqw23")
+theme_override_font_sizes/font_size = 300
+text = "0"
+
+[node name="GameOverScreen" parent="UILayer" unique_id=112611397 instance=ExtResource("3_h1wbu")]
+unique_name_in_owner = true
+
+[node name="StartLabel" type="Label" parent="UILayer" unique_id=1512715047]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.5
+offset_top = -85.0
+offset_right = 262.5
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_uqw23")
+theme_override_font_sizes/font_size = 300
+text = "tap_to_play"
+
+[node name="InstructionsLabel" type="Label" parent="UILayer" unique_id=900586469]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = 100.0
+offset_right = 319.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_uqw23")
+theme_override_font_sizes/font_size = 250
+text = "snake_instructions"
+horizontal_alignment = 1
+
+[node name="FoodPlayer" type="AudioStreamPlayer" parent="." unique_id=542870612]
+stream = ExtResource("4_reko3")
+bus = &"Sound"
+
+[node name="MovePlayer" type="AudioStreamPlayer" parent="." unique_id=729080329]
+stream = ExtResource("5_ai5so")
+bus = &"Sound"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2058622463]
+stream = ExtResource("6_0va0l")
+volume_db = -10.0
+autoplay = true
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1655241869]
+layer = -10
+
+[node name="BackgroundTexture" parent="BackgroundLayer" unique_id=1712116587 instance=ExtResource("7_0va0l")]
+unique_name_in_owner = true
+texture = ExtResource("8_bxd63")

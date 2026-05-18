@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dna1u64vkar4k"]
+
+[ext_resource type="Script" uid="uid://82akladpnjhw" path="res://scripts/space_run/space_run_player.gd" id="1_bwquu"]
+[ext_resource type="Texture2D" uid="uid://ckjcohk837vww" path="res://sprites/space_run/Ships/spaceShips_001.png" id="1_e2ke4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwquu"]
+radius = 43.931767
+
+[node name="SpaceRunPlayer" type="CharacterBody2D" unique_id=1183366441]
+script = ExtResource("1_bwquu")
+
+[node name="SpaceRunPlayerSprite" type="Sprite2D" parent="." unique_id=283785640]
+rotation = -1.5707964
+texture = ExtResource("1_e2ke4")
+
+[node name="SpaceRunPlayerCollision" type="CollisionShape2D" parent="." unique_id=359310458]
+shape = SubResource("CircleShape2D_bwquu")

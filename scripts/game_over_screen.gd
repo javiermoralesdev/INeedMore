@@ -20,6 +20,11 @@ func _on_main_menu_button_pressed() -> void:
 func _on_end_day_button_pressed() -> void:
 	pass # Replace with function body.
 
-func trigger() -> void:
+func trigger(score: int, high_score: int, target: int) -> void:
+	print("Score: " + str(score) + ", High Score: " + str(high_score))
 	visible = true
+	$ScoreLabel.text = tr("score") + ": " + str(score)
+	$HighScoreLabel.text = tr("hscore") + ": " + str(high_score)
+	if high_score < target or Global.free_mode:
+		$EndDayButton.queue_free()
 	$AnimationPlayer.play("show")

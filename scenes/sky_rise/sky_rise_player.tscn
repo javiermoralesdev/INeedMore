@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dfyopixc21ffq"]
+
+[ext_resource type="Script" uid="uid://dg3b55sdslt52" path="res://scripts/sky_rise/sky_rise_player.gd" id="1_ielbt"]
+[ext_resource type="Texture2D" uid="uid://ce7au0bv5icx4" path="res://sprites/sky_rise/Idle (32x32).png" id="1_oxvx6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxvx6"]
+size = Vector2(20, 25)
+
+[node name="SkyRisePlayer" type="CharacterBody2D" unique_id=1344797232]
+script = ExtResource("1_ielbt")
+
+[node name="SkyRisePlayerSprite" type="Sprite2D" parent="." unique_id=1208598573]
+texture = ExtResource("1_oxvx6")
+
+[node name="SkyRisePlayerCollider" type="CollisionShape2D" parent="." unique_id=1028143053]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_oxvx6")

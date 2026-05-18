@@ -1,6 +1,10 @@
 ﻿id,en,es
-tap_to_play,Tap to start!,¡Pulsa para empezar
+tap_to_play,Tap to start!,¡Pulsa para empezar!
 game_over,Game Over,Fin de partida
 retry,Retry,Reintentar
 main_menu,Main Menu,Menú Principal
 end_day,End day,Acabar día
+score,Score,Puntuación
+hscore,High Score,Máxima Puntuación
+space_run_instructions,Swipe up and down,Desliza arriba y abajo
+snake_instructions,Swipe in any direction,Desliza en cualquier dirección

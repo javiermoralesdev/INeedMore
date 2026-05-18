@@ -8,7 +8,7 @@ const gravity: float = 5
 const FALL_THRESSHOLD: int = 100
 const BASE_SPEED: int = 100
 
-var pipe_speed: int = 100
+var pipe_speed: int = BASE_SPEED
 var score: int = 0
 
 @onready var jump_texture: Texture = preload("res://sprites/flap_space/Jump (32x32).png")
@@ -17,9 +17,6 @@ var score: int = 0
 
 var dead: bool = false 
 var start: bool = false
-
-func _ready() -> void:
-	%CRTShader.visible = true
 
 func _physics_process(_delta: float) -> void:
 	var new_speed: int = BASE_SPEED + (score * 10)
@@ -57,7 +54,9 @@ func die() -> void:
 	dead = true
 	$PlayerSprite.modulate = Color.RED
 	%BackgroundTexture.material.set_shader_parameter("motion", Vector2.ZERO)
-	%GameOverScreen.trigger()
+	if score > Global.flap_space_high_score:
+		Global.flap_space_high_score = score
+	%GameOverScreen.trigger(score, Global.flap_space_high_score, 20)
 
 
 func _on_spawn_timer_timeout() -> void:
@@ -69,5 +68,9 @@ func _on_spawn_timer_timeout() -> void:
 
 func add_score(amount: int) -> void:
 	score += amount
+	if score > 3:
+		%SpawnTimer.wait_time = 2
+	if score > 15:
+		%SpawnTimer.wait_time = 1.5
 	%ScoreLabel.text = str(score)
 	%CoinPlayer.play()

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://clchdmy6hyd6d"]
+
+[ext_resource type="Script" uid="uid://1igbn1apcpvv" path="res://scripts/space_run/diamond.gd" id="1_hkpfq"]
+[ext_resource type="Texture2D" uid="uid://bhlchst852mfa" path="res://sprites/space_run/Red Diamond/01.png" id="1_n7j7i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n7j7i"]
+radius = 37.054016
+
+[node name="Diamond" type="Area2D" unique_id=66433067]
+script = ExtResource("1_hkpfq")
+
+[node name="DiamondSprite" type="Sprite2D" parent="." unique_id=473251445]
+scale = Vector2(4.7499995, 4.7499995)
+texture = ExtResource("1_n7j7i")
+
+[node name="DiamondCollision" type="CollisionShape2D" parent="." unique_id=1617200068]
+shape = SubResource("CircleShape2D_n7j7i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

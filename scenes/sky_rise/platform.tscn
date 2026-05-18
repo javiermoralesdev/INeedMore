@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://wi4y6ixqw2r"]
+
+[ext_resource type="Texture2D" uid="uid://0c7p4fg54syb" path="res://sprites/flap_space/Terrain (16x16).png" id="1_4w5hi"]
+[ext_resource type="Script" uid="uid://d0cqh3i1o4l0k" path="res://scripts/sky_rise/platform.gd" id="1_anr6k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w5hi"]
+size = Vector2(137, 31)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=1679832420]
+sync_to_physics = false
+script = ExtResource("1_anr6k")
+
+[node name="PlatformSprite" type="Sprite2D" parent="." unique_id=441875388]
+rotation = 1.5707964
+scale = Vector2(1.9874921, 2.8768764)
+texture = ExtResource("1_4w5hi")
+region_enabled = true
+region_rect = Rect2(240.03363, 127.88031, 16.03061, 47.72719)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1696593740]
+shape = SubResource("RectangleShape2D_4w5hi")

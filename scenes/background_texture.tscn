@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://13dy0apv0pdl"]
+
+[ext_resource type="Shader" uid="uid://dsinbasrwt6nn" path="res://shaders/bg_scroll.gdshader" id="1_6qqqy"]
+[ext_resource type="Texture2D" uid="uid://b4vnldc43p10l" path="res://sprites/backgrounds/Blue.png" id="2_mw18i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvtws"]
+shader = ExtResource("1_6qqqy")
+shader_parameter/motion = Vector2(0, 0)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 0)
+
+[node name="BackgroundTexture" type="TextureRect" unique_id=1712116587]
+material = SubResource("ShaderMaterial_tvtws")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mw18i")
+expand_mode = 1
+stretch_mode = 1

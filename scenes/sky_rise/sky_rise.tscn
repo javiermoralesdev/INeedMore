@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bscrrlkfvxgjy"]
+
+[ext_resource type="PackedScene" uid="uid://dfyopixc21ffq" path="res://scenes/sky_rise/sky_rise_player.tscn" id="1_3e8s6"]
+[ext_resource type="PackedScene" uid="uid://wi4y6ixqw2r" path="res://scenes/sky_rise/platform.tscn" id="2_r524g"]
+
+[node name="SkyRise" type="Node2D" unique_id=904015355]
+z_index = 4
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=350356585]
+zoom = Vector2(2.5, 2.5)
+
+[node name="StartPlatform" parent="." unique_id=1679832420 instance=ExtResource("2_r524g")]
+unique_name_in_owner = true
+position = Vector2(4, -163)
+
+[node name="StartPlatform2" parent="." unique_id=1824799497 instance=ExtResource("2_r524g")]
+position = Vector2(198, -321)
+
+[node name="SkyRisePlayer" parent="." unique_id=1344797232 instance=ExtResource("1_3e8s6")]
+position = Vector2(6, -194)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1278898396]
+offset_left = -625.0
+offset_top = -145.0
+offset_right = -255.0
+offset_bottom = 143.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2143775800]
+offset_left = 255.0
+offset_top = -145.0
+offset_right = 625.0
+offset_bottom = 143.0
+color = Color(0, 0, 0, 1)
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1873085318]
+
+[connection signal="timeout" from="SpawnTimer" to="SkyRisePlayer" method="_on_spawn_timer_timeout"]

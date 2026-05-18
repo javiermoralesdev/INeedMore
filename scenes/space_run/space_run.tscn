@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dtqtwwfna0u68"]
+
+[ext_resource type="PackedScene" uid="uid://dna1u64vkar4k" path="res://scenes/space_run/space_run_player.tscn" id="1_xrlcb"]
+[ext_resource type="PackedScene" uid="uid://13dy0apv0pdl" path="res://scenes/background_texture.tscn" id="2_66d2k"]
+[ext_resource type="Texture2D" uid="uid://dgr3p8uvowwwu" path="res://sprites/backgrounds/Brown.png" id="3_g1od0"]
+[ext_resource type="PackedScene" uid="uid://dhib010dlwwa4" path="res://scenes/game_over_screen.tscn" id="5_bc4wh"]
+[ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="5_ymylq"]
+[ext_resource type="AudioStream" uid="uid://bgtqbom2pqq3c" path="res://sounds/apple_pickup.wav" id="6_rdtcu"]
+[ext_resource type="AudioStream" uid="uid://cvuii7yy3rx4d" path="res://music/SpaceRun.ogg" id="8_q3u25"]
+[ext_resource type="AudioStream" uid="uid://ca1tlaiiof8jt" path="res://sounds/flap.wav" id="8_rdtcu"]
+
+[node name="SpaceRun" type="Node2D" unique_id=712955361]
+
+[node name="SpaceRunPlayer" parent="." unique_id=1183366441 instance=ExtResource("1_xrlcb")]
+unique_name_in_owner = true
+z_index = 5
+position = Vector2(55, 93)
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1705935213]
+layer = -5
+
+[node name="BackgroundTexture" parent="BackgroundLayer" unique_id=1712116587 instance=ExtResource("2_66d2k")]
+unique_name_in_owner = true
+texture = ExtResource("3_g1od0")
+metadata/_edit_lock_ = true
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=300052365]
+layer = 10
+
+[node name="StartLabel" type="Label" parent="UILayer" unique_id=820702328]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.5
+offset_top = -71.0
+offset_right = 265.5
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_ymylq")
+theme_override_font_sizes/font_size = 250
+text = "tap_to_play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowToPlay" type="Label" parent="UILayer" unique_id=205221823]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = 96.0
+offset_right = 266.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_ymylq")
+theme_override_font_sizes/font_size = 200
+text = "space_run_instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverScreen" parent="UILayer" unique_id=112611397 instance=ExtResource("5_bc4wh")]
+unique_name_in_owner = true
+
+[node name="ScoreLabel" type="Label" parent="UILayer" unique_id=1480251284]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -449.0
+offset_bottom = 119.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("5_ymylq")
+theme_override_font_sizes/font_size = 300
+text = "0"
+horizontal_alignment = 2
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1867696485]
+unique_name_in_owner = true
+wait_time = 3.0
+
+[node name="CoinPlayer" type="AudioStreamPlayer" parent="." unique_id=758390269]
+unique_name_in_owner = true
+stream = ExtResource("6_rdtcu")
+bus = &"Sound"
+
+[node name="MovePlayer" type="AudioStreamPlayer" parent="." unique_id=1247567197]
+unique_name_in_owner = true
+stream = ExtResource("8_rdtcu")
+bus = &"Sound"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=564709397]
+stream = ExtResource("8_q3u25")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="timeout" from="SpawnTimer" to="SpaceRunPlayer" method="_on_spawn_timer_timeout"]

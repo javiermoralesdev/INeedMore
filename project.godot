@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="INeedMore"
-run/main_scene="uid://dt51h4bpiwrli"
+run/main_scene="uid://dtqtwwfna0u68"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -33,8 +33,14 @@ gdscript/warnings/inferred_declaration=2
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
+
+[editor]
+
+movie_writer/movie_file="/home/javier/Videos/data.avi"
+movie_writer/fps=24
 
 [input]
 
