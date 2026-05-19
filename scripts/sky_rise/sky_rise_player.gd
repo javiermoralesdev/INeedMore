@@ -1,12 +1,12 @@
 class_name SkyRisePlayer
 extends CharacterBody2D
 
-
 const GRAVITY: float = 350.0
 
 var start: bool = false
 var dead: bool = false
 var pressing: bool = false
+var score: int = 0
 
 var mouseDown: Vector2
 
@@ -21,13 +21,16 @@ func _physics_process(delta: float) -> void:
 		velocity.y += GRAVITY * delta
 	else:
 		velocity.y = 0
+		velocity.x = 0
 	queue_redraw()
-	if Input.is_action_just_pressed("tap"):
+	if Input.is_action_just_pressed("tap") and not dead:
 		mouseDown = get_global_mouse_position()
 		if not start:
 			start = true
+			%StartLabel.queue_free()
+			%SpawnTimer.start()
 		pressing = true
-	if Input.is_action_just_released("tap"):
+	if Input.is_action_just_released("tap") and not dead:
 		jump()
 	if position.x > 255 or position.x < -255:
 		velocity.x *= -1
@@ -37,6 +40,7 @@ func jump() -> void:
 	pressing = false
 	var direction: Vector2 = get_global_mouse_position() - mouseDown
 	velocity = direction * 3.5
+	%JumpPlayer.play()
 
 func _draw() -> void:
 	if not pressing:
@@ -45,4 +49,28 @@ func _draw() -> void:
 
 
 func _on_spawn_timer_timeout() -> void:
-	var platform_instance: Node2D = platform_prefab.instantiate()
+	var platform_instance: SkyRisePlatform = platform_prefab.instantiate()
+	platform_instance.position.x = randi_range(-200, 200)
+	platform_instance.position.y = -300
+	platform_instance.player = self
+	get_parent().add_child(platform_instance)
+
+
+func _on_kill_zone_body_entered(body: Node2D) -> void:
+	if body is SkyRisePlatform:
+		(body as SkyRisePlatform).trigger()
+	if body is not SkyRisePlayer:
+		return
+	if dead:
+		return
+	dead = true
+	%SpawnTimer.stop()
+	modulate = Color.DARK_RED
+	if  score > Global.skyrise_high_score:
+		Global.skyrise_high_score = score
+	%GameOverScreen.trigger(score, Global.skyrise_high_score, 5)
+
+func add_score(amount: int) -> void:
+	score += amount
+	%ScoreLabel.text = str(score)
+	%CoinPlayer.play()

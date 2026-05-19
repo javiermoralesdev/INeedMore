@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://b1msfd0qhwqba"]
 
+[ext_resource type="Script" uid="uid://pfe8l1fi5pfm" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://pugxas62m05y" path="res://scenes/custom_button.tscn" id="1_l6cm7"]
+
 [node name="MainMenu" type="Control" unique_id=552884757]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=2112759004]
+
+[node name="ColorRect" type="ColorRect" parent="UILayer" unique_id=642337889]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HFlowContainer" type="VFlowContainer" parent="UILayer" unique_id=1108427197]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="FlapSpace" parent="UILayer/HFlowContainer" unique_id=403282519 instance=ExtResource("1_l6cm7")]
+layout_mode = 2
+text = "FlapSpace"
+
+[node name="SpaceRun" parent="UILayer/HFlowContainer" unique_id=2070191463 instance=ExtResource("1_l6cm7")]
+layout_mode = 2
+text = "SpaceRun"
+
+[node name="Snake" parent="UILayer/HFlowContainer" unique_id=355087933 instance=ExtResource("1_l6cm7")]
+layout_mode = 2
+text = "Snake"
+
+[node name="SkyRise" parent="UILayer/HFlowContainer" unique_id=569129444 instance=ExtResource("1_l6cm7")]
+layout_mode = 2
+text = "SkyRise"
+
+[node name="FinalBattle" parent="UILayer/HFlowContainer" unique_id=378118007 instance=ExtResource("1_l6cm7")]
+layout_mode = 2
+text = "FinalBattle"
+
+[connection signal="pressed" from="UILayer/HFlowContainer/FlapSpace" to="." method="_on_flap_space_pressed"]
+[connection signal="pressed" from="UILayer/HFlowContainer/SpaceRun" to="." method="_on_space_run_pressed"]
+[connection signal="pressed" from="UILayer/HFlowContainer/Snake" to="." method="_on_snake_pressed"]
+[connection signal="pressed" from="UILayer/HFlowContainer/SkyRise" to="." method="_on_sky_rise_pressed"]
+[connection signal="pressed" from="UILayer/HFlowContainer/FinalBattle" to="." method="_on_final_battle_pressed"]
