@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c37lysts5raxx"]
+
+[ext_resource type="Texture2D" uid="uid://cavamo3a8wg61" path="res://sprites/final_battle/Monk_Idle.png" id="1_01pvs"]
+[ext_resource type="Script" uid="uid://8mcbxeru1olj" path="res://scripts/final_battle/final_battle_enemy.gd" id="1_ifyhc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifyhc"]
+size = Vector2(46, 62)
+
+[node name="FinalBattleEnemy" type="Area2D" unique_id=1961945865]
+script = ExtResource("1_ifyhc")
+metadata/_edit_group_ = true
+
+[node name="EnemySprite" type="Sprite2D" parent="." unique_id=976280056]
+texture = ExtResource("1_01pvs")
+hframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1770155123]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_ifyhc")

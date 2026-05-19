@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://owlvgklkxbab"]
+
+[ext_resource type="PackedScene" uid="uid://kue7h5g7f2ua" path="res://scenes/final_battle/final_battle_player.tscn" id="1_v6rpx"]
+[ext_resource type="PackedScene" uid="uid://13dy0apv0pdl" path="res://scenes/background_texture.tscn" id="2_sy10v"]
+[ext_resource type="Texture2D" uid="uid://bs5s6l07g6e4g" path="res://sprites/backgrounds/Purple.png" id="3_nr4he"]
+
+[node name="FinalBattle" type="Node2D" unique_id=921372340]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1433412406]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=642412378]
+z_index = 2
+offset_left = 360.0
+offset_top = -938.0
+offset_right = 1763.0
+offset_bottom = 851.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1055791893]
+z_index = 2
+offset_left = -3180.0
+offset_top = -1307.0
+offset_right = -360.0
+offset_bottom = 1592.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="FinalBattlePlayer" parent="." unique_id=1953133690 instance=ExtResource("1_v6rpx")]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=692156176]
+layer = -999
+
+[node name="BackgroundTexture" parent="BackgroundLayer" unique_id=1712116587 instance=ExtResource("2_sy10v")]
+texture = ExtResource("3_nr4he")
+metadata/_edit_lock_ = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1452828636]
+unique_name_in_owner = true
+wait_time = 2.0
+
+[connection signal="timeout" from="SpawnTimer" to="FinalBattlePlayer" method="_on_spawn_timer_timeout"]
