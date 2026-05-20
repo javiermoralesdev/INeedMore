@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://kue7h5g7f2ua" path="res://scenes/final_battle/final_battle_player.tscn" id="1_v6rpx"]
 [ext_resource type="PackedScene" uid="uid://13dy0apv0pdl" path="res://scenes/background_texture.tscn" id="2_sy10v"]
 [ext_resource type="Texture2D" uid="uid://bs5s6l07g6e4g" path="res://sprites/backgrounds/Purple.png" id="3_nr4he"]
+[ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="4_nr4he"]
+[ext_resource type="PackedScene" uid="uid://dhib010dlwwa4" path="res://scenes/game_over_screen.tscn" id="5_otnhy"]
+[ext_resource type="AudioStream" uid="uid://16vnmsv6yawe" path="res://music/Shooter.ogg" id="6_wd3uj"]
+[ext_resource type="AudioStream" uid="uid://bgtqbom2pqq3c" path="res://sounds/apple_pickup.wav" id="7_fpowm"]
+[ext_resource type="AudioStream" uid="uid://ca1tlaiiof8jt" path="res://sounds/flap.wav" id="8_blnxm"]
+[ext_resource type="AudioStream" uid="uid://bhmjiqw6b25fy" path="res://sounds/break.wav" id="9_n50vq"]
 
 [node name="FinalBattle" type="Node2D" unique_id=921372340]
 
@@ -38,5 +44,59 @@ metadata/_edit_lock_ = true
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1452828636]
 unique_name_in_owner = true
 wait_time = 2.0
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1356519171]
+layer = 5
+
+[node name="StartLabel" type="Label" parent="UILayer" unique_id=560147749]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_nr4he")
+theme_override_font_sizes/font_size = 300
+text = "tap_to_play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="UILayer" unique_id=1926387134]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_nr4he")
+theme_override_font_sizes/font_size = 300
+text = "0"
+horizontal_alignment = 2
+
+[node name="GameOverScreen" parent="UILayer" unique_id=112611397 instance=ExtResource("5_otnhy")]
+unique_name_in_owner = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2058849818]
+unique_name_in_owner = true
+stream = ExtResource("6_wd3uj")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+
+[node name="CoinPlayer" type="AudioStreamPlayer" parent="." unique_id=1278197712]
+unique_name_in_owner = true
+stream = ExtResource("7_fpowm")
+bus = &"Sound"
+
+[node name="ShootPlayer" type="AudioStreamPlayer" parent="." unique_id=816038524]
+unique_name_in_owner = true
+stream = ExtResource("8_blnxm")
+bus = &"Sound"
+
+[node name="BreakPlayer" type="AudioStreamPlayer" parent="." unique_id=152427249]
+unique_name_in_owner = true
+stream = ExtResource("9_n50vq")
+bus = &"Sound"
 
 [connection signal="timeout" from="SpawnTimer" to="FinalBattlePlayer" method="_on_spawn_timer_timeout"]
