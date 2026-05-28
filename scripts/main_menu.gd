@@ -23,3 +23,12 @@ func go_to_minigame(target: String) -> void:
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://scenes/" + target +  "/" + target + ".tscn")
+
+
+func _on_real_life_pressed() -> void:
+	Transition.transition()
+	await Transition.transition_finished
+	if Global.day == 4:
+		get_tree().change_scene_to_file("res://scenes/chapter4_interlude.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/real_life.tscn")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bnfb6evnubhiq"]
+
+[ext_resource type="Script" uid="uid://bpiefix8j7dk7" path="res://scripts/chapter_4_interlude.gd" id="1_q5tgt"]
+
+[node name="Interlude" type="CanvasLayer" unique_id=884077511]
+script = ExtResource("1_q5tgt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1222421992]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

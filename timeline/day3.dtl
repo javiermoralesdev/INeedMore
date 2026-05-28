@@ -1,0 +1,15 @@
+clark: I got a text message from a person I have saved as "Mr. Robinson"
+clark: I think he's my boss
+robinson: Mr. Clark, you've been absent from work for several months without giving any sign of life.
+robinson: You left me with no choice but to fire you.
+clark: Yeah, sure
+robinson: Clark, you were a really good salesman. One of the best, in fact. I was gonna name you "employee of the month"
+robinson: I don't know what happened to you, but I hope that, wherever you are right now, you're safe and sound
+clark: Tch, "employee of the month", he said
+clark: I don't need a goddamn medal from anyone
+audio "res://sounds/bark.wav"
+clark: Shut up, Leon. Go outside or whatever if you wanna poop
+clark: Anyway, today I purchased a new title\: "Snake"
+clark: This one is a classic from my childhood
+clark: I'm willing to have a lot of fun with it
+Objective\: get at least {snake_target} points in Snake

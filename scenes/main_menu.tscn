@@ -51,8 +51,13 @@ text = "SkyRise"
 layout_mode = 2
 text = "FinalBattle"
 
+[node name="RealLife" parent="UILayer/HFlowContainer" unique_id=1881607666 instance=ExtResource("1_l6cm7")]
+layout_mode = 2
+text = "RealLife"
+
 [connection signal="pressed" from="UILayer/HFlowContainer/FlapSpace" to="." method="_on_flap_space_pressed"]
 [connection signal="pressed" from="UILayer/HFlowContainer/SpaceRun" to="." method="_on_space_run_pressed"]
 [connection signal="pressed" from="UILayer/HFlowContainer/Snake" to="." method="_on_snake_pressed"]
 [connection signal="pressed" from="UILayer/HFlowContainer/SkyRise" to="." method="_on_sky_rise_pressed"]
 [connection signal="pressed" from="UILayer/HFlowContainer/FinalBattle" to="." method="_on_final_battle_pressed"]
+[connection signal="pressed" from="UILayer/HFlowContainer/RealLife" to="." method="_on_real_life_pressed"]

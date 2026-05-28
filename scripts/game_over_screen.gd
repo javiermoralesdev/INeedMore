@@ -18,11 +18,21 @@ func _on_main_menu_button_pressed() -> void:
 
 
 func _on_end_day_button_pressed() -> void:
-	pass # Replace with function body.
+	if Global.day <= Global.free_mode_day:
+		Global.free_mode_day += 1
+	Global.day += 1
+	Global.save_game()
+	Transition.transition()
+	await Transition.transition_finished
+	if Global.day == 4:
+		get_tree().change_scene_to_file("res://scenes/chapter4_interlude.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/real_life.tscn")
 
 func trigger(score: int, high_score: int, target: int) -> void:
 	visible = true
 	$ScoreLabel.text = tr("score") + ": " + str(score)
+	Global.save_game()
 	$HighScoreLabel.text = tr("hscore") + ": " + str(high_score)
 	if high_score < target or Global.free_mode:
 		$EndDayButton.queue_free()

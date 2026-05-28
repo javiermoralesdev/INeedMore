@@ -41,9 +41,9 @@ func _process(delta: float) -> void:
 			move_snake()
 
 func generate_apple() -> void:
-	var x: int = randi_range(-360, 360)
+	var x: int = randi_range(-360, 360 - grid_size)
 	x -= x % grid_size
-	var y: int = randi_range(-360, 360)
+	var y: int = randi_range(-360, 360 - grid_size)
 	y -= y % grid_size
 	food_pos = Vector2(x, y)
 

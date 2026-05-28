@@ -1,7 +1,7 @@
 class_name SkyRisePlayer
 extends CharacterBody2D
 
-const GRAVITY: float = 350.0
+const GRAVITY: float = 300.0
 
 var start: bool = false
 var dead: bool = false

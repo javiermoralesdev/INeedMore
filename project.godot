@@ -22,9 +22,9 @@ buses/default_bus_layout="uid://b8o5p7hcrolwr"
 
 [autoload]
 
+Dialogic="*uid://ds2q0uclmolvu"
 Global="*uid://mhytylctj5ey"
 Transition="*uid://ce61uk2kewdwt"
-Dialogic="*uid://ds2q0uclmolvu"
 
 [debug]
 
@@ -33,9 +33,65 @@ gdscript/warnings/inferred_declaration=2
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"bob": "res://characters/bob.dch",
+"claire": "res://characters/claire.dch",
+"clark": "res://characters/clark.dch",
+"evelyn": "res://characters/evelyn.dch",
+"leon": "res://characters/leon.dch",
+"robinson": "res://characters/robinson.dch"
+}
+directories/dtl_directory={
+"day1": "res://timeline/day1.dtl",
+"day2": "res://timeline/day2.dtl",
+"day3": "res://timeline/day3.dtl",
+"day4": "res://timeline/day4.dtl",
+"interlude": "res://timeline/interlude.dtl"
+}
 layout/style_directory={}
+variables={
+"final_battle_target": 0,
+"flap_space_target": 0,
+"sky_rise_target": 0,
+"snake_target": 0,
+"space_run_target": 0
+}
+glossary/default_case_sensitive=true
+layout/style_list=[]
+layout/default_style=""
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+text/autopauses={}
+audio/channel_defaults={
+"": {
+"audio_bus": "Sound",
+"fade_length": 0.0,
+"loop": false,
+"volume": 0.0
+},
+"music": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
+}
+}
 
 [display]
 

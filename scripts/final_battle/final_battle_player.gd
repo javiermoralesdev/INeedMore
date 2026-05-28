@@ -76,5 +76,5 @@ func die() -> void:
 	modulate = Color.RED
 	if score > Global.final_battle_high_score:
 		Global.final_battle_high_score = score
-	%GameOverScreen.trigger(score, Global.final_battle_high_score, 20)
+	%GameOverScreen.trigger(score, Global.final_battle_high_score, 30)
 	%SpawnTimer.stop()
