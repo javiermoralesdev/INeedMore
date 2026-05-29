@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://pfe8l1fi5pfm" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="PackedScene" uid="uid://pugxas62m05y" path="res://scenes/custom_button.tscn" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://dixfiyijaq3al" path="res://fonts/Relicta-Light.otf" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://c0i80kjwwkqyd" path="res://scenes/minigame_button.tscn" id="4_8ln24"]
+[ext_resource type="AudioStream" uid="uid://etc8tqkm4hkh" path="res://music/main menu.ogg" id="4_wu84c"]
+[ext_resource type="Texture2D" uid="uid://bxhr7eery21na" path="res://images/half_flap_space.png" id="5_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://dt51h4bpiwrli" path="res://scenes/flap_space/flap_space.tscn" id="6_oa1go"]
+[ext_resource type="Texture2D" uid="uid://bj3fnmhf38w15" path="res://images/half_space_run.png" id="7_tbmy8"]
+[ext_resource type="PackedScene" uid="uid://dtqtwwfna0u68" path="res://scenes/space_run/space_run.tscn" id="8_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://b4bu8klught4b" path="res://images/half_snake.png" id="9_flqon"]
+[ext_resource type="PackedScene" uid="uid://brc3346jfgtg3" path="res://scenes/snake/snake.tscn" id="10_rcqid"]
 
 [node name="MainMenu" type="Control" unique_id=552884757]
 layout_mode = 3
@@ -22,42 +31,174 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="HFlowContainer" type="VFlowContainer" parent="UILayer" unique_id=1108427197]
+[node name="MainMenu" type="Control" parent="UILayer" unique_id=1491656762]
+visible = false
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
-last_wrap_alignment = 2
 
-[node name="FlapSpace" parent="UILayer/HFlowContainer" unique_id=403282519 instance=ExtResource("1_l6cm7")]
-layout_mode = 2
-text = "FlapSpace"
+[node name="TitleLabel" type="Label" parent="UILayer/MainMenu" unique_id=1174314752]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 115.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 100
+text = "I Need More"
+horizontal_alignment = 1
 
-[node name="SpaceRun" parent="UILayer/HFlowContainer" unique_id=2070191463 instance=ExtResource("1_l6cm7")]
-layout_mode = 2
-text = "SpaceRun"
+[node name="PlayButton" parent="UILayer/MainMenu" unique_id=403282519 instance=ExtResource("1_l6cm7")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.5
+offset_top = 175.0
+offset_right = 133.5
+offset_bottom = 251.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 65
+text = "mm_play"
 
-[node name="Snake" parent="UILayer/HFlowContainer" unique_id=355087933 instance=ExtResource("1_l6cm7")]
-layout_mode = 2
-text = "Snake"
+[node name="ContinueButton" parent="UILayer/MainMenu" unique_id=340686238 instance=ExtResource("1_l6cm7")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.0
+offset_top = 275.0
+offset_right = 207.0
+offset_bottom = 351.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 65
+text = "mm_continue"
 
-[node name="SkyRise" parent="UILayer/HFlowContainer" unique_id=569129444 instance=ExtResource("1_l6cm7")]
-layout_mode = 2
-text = "SkyRise"
+[node name="FreeModeButton" parent="UILayer/MainMenu" unique_id=2130297593 instance=ExtResource("1_l6cm7")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.0
+offset_top = 375.0
+offset_right = 195.0
+offset_bottom = 451.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 65
+text = "mm_free"
 
-[node name="FinalBattle" parent="UILayer/HFlowContainer" unique_id=378118007 instance=ExtResource("1_l6cm7")]
-layout_mode = 2
-text = "FinalBattle"
+[node name="SettingsButton" parent="UILayer/MainMenu" unique_id=77277386 instance=ExtResource("1_l6cm7")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.0
+offset_top = 475.0
+offset_right = 195.0
+offset_bottom = 551.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 65
+text = "mm_settings"
 
-[node name="RealLife" parent="UILayer/HFlowContainer" unique_id=1881607666 instance=ExtResource("1_l6cm7")]
-layout_mode = 2
-text = "RealLife"
+[node name="SettingsButton2" parent="UILayer/MainMenu" unique_id=184322469 instance=ExtResource("1_l6cm7")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.0
+offset_top = 575.0
+offset_right = 195.0
+offset_bottom = 651.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 65
+text = "mm_credits"
 
-[connection signal="pressed" from="UILayer/HFlowContainer/FlapSpace" to="." method="_on_flap_space_pressed"]
-[connection signal="pressed" from="UILayer/HFlowContainer/SpaceRun" to="." method="_on_space_run_pressed"]
-[connection signal="pressed" from="UILayer/HFlowContainer/Snake" to="." method="_on_snake_pressed"]
-[connection signal="pressed" from="UILayer/HFlowContainer/SkyRise" to="." method="_on_sky_rise_pressed"]
-[connection signal="pressed" from="UILayer/HFlowContainer/FinalBattle" to="." method="_on_final_battle_pressed"]
-[connection signal="pressed" from="UILayer/HFlowContainer/RealLife" to="." method="_on_real_life_pressed"]
+[node name="ExitButton" parent="UILayer/MainMenu" unique_id=189430170 instance=ExtResource("1_l6cm7")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -76.0
+offset_right = 254.0
+offset_bottom = 0.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 65
+text = "mm_exit"
+alignment = 0
+
+[node name="FreeModeMenu" type="Control" parent="UILayer" unique_id=1831952412]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlapSpaceButton" parent="UILayer/FreeModeMenu" unique_id=997258461 instance=ExtResource("4_8ln24")]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 120.0
+offset_right = -1114.0
+offset_bottom = -365.0
+day = 1
+minigame = ExtResource("5_rtw2f")
+title = "Flap Space"
+scene = ExtResource("6_oa1go")
+
+[node name="SpaceRunButton" parent="UILayer/FreeModeMenu" unique_id=1535636597 instance=ExtResource("4_8ln24")]
+layout_mode = 1
+offset_left = 217.0
+offset_top = 477.0
+offset_right = -899.0
+offset_bottom = -8.0
+day = 2
+minigame = ExtResource("7_tbmy8")
+title = "Space Run"
+scene = ExtResource("8_lgwnu")
+
+[node name="SpaceRunButton2" parent="UILayer/FreeModeMenu" unique_id=1187643488 instance=ExtResource("4_8ln24")]
+layout_mode = 1
+offset_left = 495.0
+offset_top = 135.0
+offset_right = -621.0
+offset_bottom = -350.0
+day = 3
+minigame = ExtResource("9_flqon")
+title = "Space Run"
+scene = ExtResource("10_rcqid")
+
+[node name="SettingsMenu" type="Control" parent="UILayer" unique_id=890677618]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Credits" type="Control" parent="UILayer" unique_id=294211484]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=697672806]
+stream = ExtResource("4_wu84c")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="UILayer/MainMenu/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UILayer/MainMenu/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="UILayer/MainMenu/ExitButton" to="." method="_on_exit_button_pressed"]

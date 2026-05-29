@@ -1,6 +1,5 @@
 extends ColorRect
 
-@onready var main_menu: PackedScene = preload("res://scenes/main_menu.tscn")
 
 func _ready() -> void:
 	visible = false
@@ -14,7 +13,7 @@ func _on_retry_button_pressed() -> void:
 func _on_main_menu_button_pressed() -> void:
 	Transition.transition()
 	await Transition.transition_finished
-	get_tree().change_scene_to_packed(main_menu)
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_end_day_button_pressed() -> void:

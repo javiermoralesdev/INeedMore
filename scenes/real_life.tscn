@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bne7paqddlgrx" path="res://scripts/real_life.gd" id="1_4ua5h"]
 [ext_resource type="Texture2D" uid="uid://c8wx5u27eqvt0" path="res://sprites/irl/clark.png" id="1_kv6b7"]
 [ext_resource type="Texture2D" uid="uid://e1bbdk81bqep" path="res://sprites/irl/window.png" id="3_b5ksu"]
-[ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="4_6gvf8"]
+[ext_resource type="FontFile" uid="uid://dixfiyijaq3al" path="res://fonts/Relicta-Light.otf" id="5_4u12w"]
 [ext_resource type="Texture2D" uid="uid://b1b4aeuirjbgc" path="res://sprites/irl/bed.svg" id="5_hjqw7"]
 [ext_resource type="AudioStream" uid="uid://dkfl0hg5vujjy" path="res://sounds/rain.ogg" id="6_4u12w"]
 
@@ -119,10 +119,23 @@ _data = {
 [node name="RealLife" type="Node2D" unique_id=1101270098]
 script = ExtResource("1_4ua5h")
 
+[node name="Bed" type="Sprite2D" parent="." unique_id=564762412]
+position = Vector2(342.00006, 628)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_hjqw7")
+metadata/_edit_lock_ = true
+
 [node name="Clark" type="Sprite2D" parent="." unique_id=2087225912]
-position = Vector2(1035, 564)
+position = Vector2(1035, 568)
 scale = Vector2(0.35813954, 0.35813951)
 texture = ExtResource("1_kv6b7")
+
+[node name="ColorRect" type="ColorRect" parent="Clark" unique_id=1697380536]
+offset_left = -83.766235
+offset_top = -287.5974
+offset_right = 83.766235
+offset_bottom = -167.53247
+color = Color(1, 1, 1, 0)
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1344937462]
 layer = -999
@@ -143,6 +156,7 @@ zoom = Vector2(1.25, 1.25)
 position = Vector2(360, 290)
 scale = Vector2(0.3871951, 0.3871951)
 texture = ExtResource("3_b5ksu")
+metadata/_edit_lock_ = true
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=719252890]
 layer = 5
@@ -171,8 +185,8 @@ offset_right = 0.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_6gvf8")
-theme_override_font_sizes/font_size = 300
+theme_override_fonts/font = ExtResource("5_4u12w")
+theme_override_font_sizes/font_size = 125
 text = "day1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -181,11 +195,6 @@ vertical_alignment = 1
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_4u12w")
 autoplay = &"start"
-
-[node name="Bed" type="Sprite2D" parent="." unique_id=564762412]
-position = Vector2(342.00006, 628)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_hjqw7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2007192572]
 stream = ExtResource("6_4u12w")

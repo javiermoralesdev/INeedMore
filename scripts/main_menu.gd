@@ -1,34 +1,26 @@
 extends Control
 
-func _on_flap_space_pressed() -> void:
-	go_to_minigame("flap_space")
+func _ready() -> void:
+	Global.free_mode = false
+	if OS.get_name() == "Android":
+		$UILayer/MainMenu/ExitButton.queue_free()
+	$UILayer/MainMenu/ContinueButton.text = tr("mm_continue") + " - " + tr("chapter") + " " + str(Global.day)
 
 
-func _on_space_run_pressed() -> void:
-	go_to_minigame("space_run")
-
-
-func _on_snake_pressed() -> void:
-	go_to_minigame("snake")
-
-
-func _on_sky_rise_pressed() -> void:
-	go_to_minigame("sky_rise")
-
-
-func _on_final_battle_pressed() -> void:
-	go_to_minigame("final_battle")
-
-func go_to_minigame(target: String) -> void:
+func _on_play_button_pressed() -> void:
 	Transition.transition()
 	await Transition.transition_finished
-	get_tree().change_scene_to_file("res://scenes/" + target +  "/" + target + ".tscn")
+	Global.day = 1
+	Global.save_game()
+	get_tree().change_scene_to_file("res://scenes/real_life.tscn")
 
-
-func _on_real_life_pressed() -> void:
+func _on_continue_button_pressed() -> void:
 	Transition.transition()
 	await Transition.transition_finished
-	if Global.day == 4:
-		get_tree().change_scene_to_file("res://scenes/chapter4_interlude.tscn")
-	else:
-		get_tree().change_scene_to_file("res://scenes/real_life.tscn")
+	get_tree().change_scene_to_file("res://scenes/real_life.tscn")
+
+
+func _on_exit_button_pressed() -> void:
+	Transition.transition()
+	await Transition.transition_finished
+	get_tree().quit()
