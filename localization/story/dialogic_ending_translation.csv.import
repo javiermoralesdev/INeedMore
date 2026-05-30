@@ -6,10 +6,10 @@ uid="uid://cb2frnirbq4c5"
 
 [deps]
 
-files=["res://localization/story/dialogic_ending_translation.en.translation"]
+files=["res://localization/story/dialogic_ending_translation.en.translation", "res://localization/story/dialogic_ending_translation.es.translation"]
 
 source_file="res://localization/story/dialogic_ending_translation.csv"
-dest_files=["res://localization/story/dialogic_ending_translation.en.translation"]
+dest_files=["res://localization/story/dialogic_ending_translation.en.translation", "res://localization/story/dialogic_ending_translation.es.translation"]
 
 [params]
 

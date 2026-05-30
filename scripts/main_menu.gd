@@ -10,7 +10,7 @@ func _ready() -> void:
 	$UILayer/SettingsMenu/VBoxContainer/SoundSelector.change_value(Global.sound_volume * 10)
 	$UILayer/SettingsMenu/VBoxContainer/AmbientSelector.change_value(Global.ambient_volume * 10)
 	$UILayer/SettingsMenu/VBoxContainer/FullscreenSelector.change_value(1 if Global.fullscreen else 0)
-	$UILayer/SettingsMenu/VBoxContainer/LanguageSelector.change_value(0 if Global.language == "en" else 1)
+	$UILayer/SettingsMenu/VBoxContainer/LanguageSelector.change_value(Global.get_locale_index(TranslationServer.get_locale()) if Global.language == "" else Global.get_locale_index(Global.language))
 
 func _on_play_button_pressed() -> void:
 	Transition.transition()

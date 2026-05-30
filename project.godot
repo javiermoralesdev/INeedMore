@@ -10,11 +10,12 @@ config_version=5
 
 [application]
 
-config/name="INeedMore"
+config/name="I Need More"
 run/main_scene="uid://b1msfd0qhwqba"
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
-config/icon="res://icon.svg"
+boot_splash/image="uid://cu7hksg3m7g5r"
+config/icon="uid://cla0jp4lghlut"
 
 [audio]
 
@@ -144,7 +145,7 @@ dialogic_default_action={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.es.translation", "res://localization/story/dialogic_day6_translation.en.translation", "res://localization/story/dialogic_interlude_translation.en.translation", "res://localization/story/dialogic_day1_translation.en.translation", "res://localization/story/dialogic_day3_translation.en.translation", "res://localization/story/dialogic_ending_translation.en.translation", "res://localization/story/dialogic_day4_translation.en.translation", "res://localization/story/dialogic_day1_translation.es.translation", "res://localization/story/dialogic_character_translations.es.translation", "res://localization/story/dialogic_day5_translation.en.translation", "res://localization/story/dialogic_character_translations.en.translation", "res://localization/story/dialogic_day2_translation.en.translation")
+locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.es.translation", "res://localization/story/dialogic_day6_translation.en.translation", "res://localization/story/dialogic_interlude_translation.en.translation", "res://localization/story/dialogic_day1_translation.en.translation", "res://localization/story/dialogic_day3_translation.en.translation", "res://localization/story/dialogic_ending_translation.en.translation", "res://localization/story/dialogic_day4_translation.en.translation", "res://localization/story/dialogic_day1_translation.es.translation", "res://localization/story/dialogic_character_translations.es.translation", "res://localization/story/dialogic_day5_translation.en.translation", "res://localization/story/dialogic_character_translations.en.translation", "res://localization/story/dialogic_day2_translation.en.translation", "res://localization/story/dialogic_day3_translation.es.translation", "res://localization/story/dialogic_day2_translation.es.translation", "res://localization/story/dialogic_ending_translation.es.translation", "res://localization/story/dialogic_day6_translation.es.translation", "res://localization/story/dialogic_interlude_translation.es.translation", "res://localization/story/dialogic_day4_translation.es.translation", "res://localization/story/dialogic_day5_translation.es.translation")
 
 [physics]
 

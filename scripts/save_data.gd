@@ -11,5 +11,5 @@ extends Resource
 @export var music_volume: float = 1
 @export var sound_volume: float = 1
 @export var ambient_volume: float = 1
-@export var fullscreen: bool = false
+@export var fullscreen: bool = true
 @export var language: String = ""

@@ -6,10 +6,10 @@ uid="uid://drslm0ch348t7"
 
 [deps]
 
-files=["res://localization/story/dialogic_day6_translation.en.translation"]
+files=["res://localization/story/dialogic_day6_translation.en.translation", "res://localization/story/dialogic_day6_translation.es.translation"]
 
 source_file="res://localization/story/dialogic_day6_translation.csv"
-dest_files=["res://localization/story/dialogic_day6_translation.en.translation"]
+dest_files=["res://localization/story/dialogic_day6_translation.en.translation", "res://localization/story/dialogic_day6_translation.es.translation"]
 
 [params]
 

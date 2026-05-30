@@ -25,10 +25,10 @@ var skyrise_high_score: int = 0
 var final_battle_high_score: int = 0
 var day: int = 1
 var free_mode_day: int = 1
-var music_volume: float = 0
-var sound_volume: float = 0
-var ambient_volume: float = 0
-var fullscreen: bool = false
+var music_volume: float = 1
+var sound_volume: float = 1
+var ambient_volume: float = 1
+var fullscreen: bool = true
 var language: String = ""
 
 func _ready() -> void:
@@ -103,3 +103,11 @@ func change_scene(scene: String) -> void:
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://scenes/" + scene + ".tscn")
+
+func get_locale_index(locale: String) -> int:
+	match locale:
+		"en":
+			return 0
+		"es":
+			return 1
+	return 0
