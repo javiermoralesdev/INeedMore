@@ -1,0 +1,11 @@
+I Need More es una colección de 5 minijuegos arcade con controles táctiles simples.
+
+- FlapSpace: Navega entre obstáculos en este frenético juego de vuelo
+- SpaceRun: Corre lo más lejos posible esquivando todo lo que encuentres
+- Snake: El clásico de siempre. Come, crece, no te muerdas
+- SkyRise: Salta hacia arriba y no caigas
+- FinalBattle: Estás rodeado. Dispara a todo lo que se mueva
+
+Desbloquea todos los minijuegos en el Modo Historia y juégalos sin límite en el Modo Libre.
+
+100% gratuito y de código abierto bajo la GPL 3.

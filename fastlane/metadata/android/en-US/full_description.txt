@@ -1,0 +1,11 @@
+I Need More is a collection of 5 arcade minigames with simple one-touch controls.
+
+- FlapSpace: Navigate through obstacles in this fast-paced flapper
+- SpaceRun: Run as far as you can while dodging everything in your path
+- Snake: The classic game. Eat, grow, don't bite yourself
+- SkyRise: Jump your way to the top and don't fall
+- FinalBattle: You're surrounded. Shoot everything that moves
+
+Unlock all minigames in Story Mode, then play them endlessly in Free Mode and chase your high scores.
+
+100% free and open source under the GPL 3.
