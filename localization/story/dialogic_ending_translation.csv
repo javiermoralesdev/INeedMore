@@ -1,0 +1,28 @@
+﻿keys,en,es
+Text/5b/text,"After several weeks, the landlord came to Clark's apartment to evict him.","Después de muchas semanas, el casero de Clark vino a su apartamento para desalojarlo."
+Text/5c/text,He didn't answer the door.,No respondió a la puerta
+Text/5d/text,No one lived there.,Ya nadie vivía ahí.
+Text/5e/text,The landlord called the police and they opened the door.,El casero llamó a la policía y estos derribaron la puerta
+Text/5f/text,What they found was...,Lo que encontraron dentro fue...
+Text/60/text,...disturbing.,...perturbador
+Text/61/text,They found out Clark's body in bed.,Encontraron el cuerpo de Clark en la cama
+Text/62/text,He looked extremely weak.,Se veía extremadamente débil.
+Text/63/text,He was hugged to what it used to be his GameStation 69,Estaba abrazado a lo que una vez fue su GameStation 69
+Text/64/text,"""What a loser"", the landlord said.","""Menudo perdedor"", dijo el casro"
+Text/65/text,"Before leaving the apartment, the landlord saw something written on the wall using what appeared to be blood. It said:","Antes de salir del aprtamento, el casero leyó un mesnaje escrito en la pared con lo que parecía ser sangre. Decía:"
+Text/66/text,"""I NEEDED MORE""","""NECESITABA MÁS"""
+Text/67/text,"Whoa, that was a bit strong.","Vaya, eso igual ha sido un poco fuerte"
+Text/68/text,Hello there! My name's Javi. The developer of what you just experienced.,"¡Hola! Me llamo Javi, el desarrollador de lo que acabas de experimentar"
+Text/69/text,"Well, sorry if I traumatized you too much.","Bueno, perdón si te he traumatizado demasiado."
+Text/6a/text,Writing has always been a great passion for me and so is gaming so I thought of combining both in this game.,Siempre me ha encantado escribir así como los videojuegos y he pensado en combinar las dos en este juego.
+Text/6b/text,"Just to clarify, no dog or granny was harmed during the development of this game.","Para dejar la cosas claras, ningún perro o abuelita ha sido herido durante la producción de este juego"
+Text/6c/text,"Just as a reminder, the game is open source and licensed under the GPL 3",Como recordatorio: este juego es de código abierto y está licenciado bajo la GPL 3
+Text/6d/text,"You can check itch io page of the game, or its source code below",Puedes revisar la página de itch.io de este juego o su código fuente a continuación
+Label/6e/display_name,,
+Choice/6f/text,Check itch page,Comprobar página de itch
+Choice/6f/disabled_text,,
+Choice/70/text,Check source code,Comprobar código fuente
+Choice/70/disabled_text,,
+Choice/71/text,Return to main menu,Regresar al menú principal
+Choice/71/disabled_text,,
+Text/72/text,"Once again, thank you por playing my game.","Una vez más, gracias por jugar mi juego."

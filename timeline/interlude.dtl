@@ -1,17 +1,17 @@
-Leon is wandering around the neighborhood
-evelyn: Oh, hello puppy. Why are you so alone? You wanna eat something
+Leon is wandering around the neighborhood #id:11
+evelyn: Oh, hello puppy. Why are you so alone? You wanna eat something #id:12
 audio "res://sounds/bark.wav"
-leon: Guau!
-evelyn: Good boy, here have some cookies that granny Evelyn made
-evelyn: You're Clark's dog, right?
-evelyn: I haven't heard of Clark for a few months.
-evelyn: A few months ago, I saw his girlfriend Claire crying outside of his house
-evelyn: They must have had a fight
-Suddenly, Leon sees a ball on the other side of the road and wants to go towards it.
-evelyn: Leon! Watch out! It might be dangerous!
+leon: Guau! #id:13
+evelyn: Good boy, here have some cookies that granny Evelyn made #id:14
+evelyn: You're Clark's dog, right? #id:15
+evelyn: I haven't heard of Clark for a few months. #id:16
+evelyn: A few months ago, I saw his girlfriend Claire crying outside of his house #id:17
+evelyn: They must have had a fight #id:18
+Suddenly, Leon sees a ball on the other side of the road and wants to go towards it. #id:19
+evelyn: Leon! Watch out! It might be dangerous! #id:1a
 audio "res://sounds/truck.wav"
-evelyn: LEON! THE TRUCK!!
+evelyn: LEON! THE TRUCK!! #id:1b
 audio "res://sounds/crash.mp3"
 audio "res://sounds/dog hurt.mp3"
 [wait time="3s" ]
-evelyn: L-Leon?
+evelyn: L-Leon? #id:1c

@@ -50,38 +50,35 @@ unique_name_in_owner = true
 
 [node name="StartLabel" type="Label" parent="UILayer" unique_id=1512715047]
 unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -262.5
 offset_top = -85.0
-offset_right = 262.5
 offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_uqw23")
 theme_override_font_sizes/font_size = 300
 text = "tap_to_play"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="InstructionsLabel" type="Label" parent="UILayer" unique_id=900586469]
 unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -319.0
-offset_top = 100.0
-offset_right = 319.0
-offset_bottom = 270.0
+offset_top = 168.0
+offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_uqw23")
 theme_override_font_sizes/font_size = 250
 text = "snake_instructions"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="FoodPlayer" type="AudioStreamPlayer" parent="." unique_id=542870612]
 stream = ExtResource("4_reko3")
@@ -102,3 +99,4 @@ layer = -10
 [node name="BackgroundTexture" parent="BackgroundLayer" unique_id=1712116587 instance=ExtResource("7_0va0l")]
 unique_name_in_owner = true
 texture = ExtResource("8_bxd63")
+metadata/_edit_lock_ = true

@@ -29,14 +29,11 @@ layer = 10
 
 [node name="StartLabel" type="Label" parent="UILayer" unique_id=820702328]
 unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -265.5
 offset_top = -71.0
-offset_right = 265.5
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -45,18 +42,16 @@ theme_override_font_sizes/font_size = 250
 text = "tap_to_play"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="HowToPlay" type="Label" parent="UILayer" unique_id=205221823]
 unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -265.0
-offset_top = 96.0
-offset_right = 266.0
-offset_bottom = 238.0
+offset_top = 185.0
+offset_bottom = 298.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_ymylq")
@@ -64,6 +59,7 @@ theme_override_font_sizes/font_size = 200
 text = "space_run_instructions"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="GameOverScreen" parent="UILayer" unique_id=112611397 instance=ExtResource("5_bc4wh")]
 unique_name_in_owner = true

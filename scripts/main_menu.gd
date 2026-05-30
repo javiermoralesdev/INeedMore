@@ -4,6 +4,7 @@ func _ready() -> void:
 	Global.free_mode = false
 	if OS.get_name() == "Android":
 		$UILayer/MainMenu/ExitButton.queue_free()
+		$UILayer/SettingsMenu/VBoxContainer/FullscreenSelector.visible = false
 	$UILayer/MainMenu/ContinueButton.text = tr("mm_continue") + " - " + tr("chapter") + " " + str(Global.day)
 	$UILayer/SettingsMenu/VBoxContainer/MusicSelector.change_value(Global.music_volume * 10)
 	$UILayer/SettingsMenu/VBoxContainer/SoundSelector.change_value(Global.sound_volume * 10)

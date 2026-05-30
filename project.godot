@@ -96,6 +96,17 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+translation/enabled=true
+translation/original_locale="en"
+translation/file_mode=1
+translation/translation_folder="res://localization/story"
+translation/save_mode=0
+translation/add_separator=false
+translation/intern/save_mode=0
+translation/intern/file_mode=1
+translation/intern/translation_folder="res://localization/story"
+translation/id_counter=176
+translation/locales=["en", "es"]
 
 [display]
 
@@ -133,7 +144,7 @@ dialogic_default_action={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.es.translation")
+locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.es.translation", "res://localization/story/dialogic_day6_translation.en.translation", "res://localization/story/dialogic_interlude_translation.en.translation", "res://localization/story/dialogic_day1_translation.en.translation", "res://localization/story/dialogic_day3_translation.en.translation", "res://localization/story/dialogic_ending_translation.en.translation", "res://localization/story/dialogic_day4_translation.en.translation", "res://localization/story/dialogic_day1_translation.es.translation", "res://localization/story/dialogic_character_translations.es.translation", "res://localization/story/dialogic_day5_translation.en.translation", "res://localization/story/dialogic_character_translations.en.translation", "res://localization/story/dialogic_day2_translation.en.translation")
 
 [physics]
 

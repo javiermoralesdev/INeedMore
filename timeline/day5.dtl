@@ -1,22 +1,22 @@
-clark: I got a letter.
-clark: It's the first one I had in months.
-clark: It says it's from "Lionsgate Real Estate"
-clark: I think it's about my rent.
-Greetings, Mr. Clark.
-We reach out to you about the repeated non-payment of your rent.
-Since it's been several months since we've received any news from you,
-We feel obligated to evict you from our property
-You have 15 days to leave or we'll be forced to eject you.
-clark: What? They're planning to kick me out of my house?
-clark: ...
-clark: I don't know what to do now.
-clark: I can't live in Claire's place because I lost her.
-clark: I don't think my mom would wanna let me in since I haven't answered her calls in days.
-clark: ...
-clark: I'm too anxious.
-clark: I need to play something.
-clark: ...
-Thank you for your purchase.
-clark: I just bought this game called "FinalBattle".
-clark: Maybe the title is a bit to epic but it could be cool.
-Objective\: Get at least {final_battle_target} points in FinalBattle.
+clark: I got a letter. #id:1d
+clark: It's the first one I had in months. #id:1e
+clark: It says it's from "Lionsgate Real Estate" #id:1f
+clark: I think it's about my rent. #id:20
+Greetings, Mr. Clark. #id:21
+We reach out to you about the repeated non-payment of your rent. #id:22
+Since it's been several months since we've received any news from you, #id:23
+We feel obligated to evict you from our property #id:24
+You have 15 days to leave or we'll be forced to eject you. #id:25
+clark: What? They're planning to kick me out of my house? #id:26
+clark: ... #id:27
+clark: I don't know what to do now. #id:28
+clark: I can't live in Claire's place because I lost her. #id:29
+clark: I don't think my mom would wanna let me in since I haven't answered her calls in days. #id:2a
+clark: ... #id:2b
+clark: I'm too anxious. #id:2c
+clark: I need to play something. #id:2d
+clark: ... #id:2e
+Thank you for your purchase. #id:2f
+clark: I just bought this game called "FinalBattle". #id:30
+clark: Maybe the title is a bit to epic but it could be cool. #id:31
+Objective\: Get at least {final_battle_target} points in FinalBattle. #id:32

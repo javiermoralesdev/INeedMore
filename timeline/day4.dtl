@@ -1,26 +1,26 @@
-clark: I have a missed called. It's from my neighbour Evelyn
-clark: She left me a voice message
-evelyn: Good evening, Clark. I haven't seen you in a while. I hope you're doing great
-evelyn: Listen, this is hard to tell and I don't even know to do it.
-evelyn: Leon was wandering around my house this morning.
-evelyn: He saw a ball on the other side of the road.
-evelyn: He ran towards it without thinking twice.
-evelyn: A truck that was going by didn't see him and...
-evelyn: I'm so sorry, Clark.
-evelyn: I know you were so bonded together.
-evelyn: I buried the corpse myself in the backyard of my house.
-evelyn: He has some flowers.
-evelyn: If you ever need a hug or someone to talk to, here I am for you.
-evelyn: At least Claire is with you.
-evelyn: I really like this girl for you. I hope you get engaged one day
-clark: Yeah, keep dreaming.
-evelyn: Again, I'm so sorry for your loss. Best wishes.
-clark: Jeez, that dog only ate, pooped and barked.
-clark: It's better this way.
-clark: Good thing that old woman buried the corpse herself.
-clark: Less work for me
-clark: ...
-clark: Whatever, I need to play something
-clark: Today I bought my fourth game: "SkyRise"
-clark: This one looks fun but a bit challenging. I'll take it easy.
-Objective\: Get at least {sky_rise_target} points in SkyRise
+clark: I have a missed called. It's from my neighbour Evelyn #id:41
+clark: She left me a voice message #id:42
+evelyn: Good evening, Clark. I haven't seen you in a while. I hope you're doing great #id:43
+evelyn: Listen, this is hard to tell and I don't even know to do it. #id:44
+evelyn: Leon was wandering around my house this morning. #id:45
+evelyn: He saw a ball on the other side of the road. #id:46
+evelyn: He ran towards it without thinking twice. #id:47
+evelyn: A truck that was going by didn't see him and... #id:48
+evelyn: I'm so sorry, Clark. #id:49
+evelyn: I know you were so bonded together. #id:4a
+evelyn: I buried the corpse myself in the backyard of my house. #id:4b
+evelyn: He has some flowers. #id:4c
+evelyn: If you ever need a hug or someone to talk to, here I am for you. #id:4d
+evelyn: At least Claire is with you. #id:4e
+evelyn: I really like this girl for you. I hope you get engaged one day #id:4f
+clark: Yeah, keep dreaming. #id:50
+evelyn: Again, I'm so sorry for your loss. Best wishes. #id:51
+clark: Jeez, that dog only ate, pooped and barked. #id:52
+clark: It's better this way. #id:53
+clark: Good thing that old woman buried the corpse herself. #id:54
+clark: Less work for me #id:55
+clark: ... #id:56
+clark: Whatever, I need to play something #id:57
+clark: Today I bought my fourth game\: "SkyRise" #id:58
+clark: This one looks fun but a bit challenging. I'll take it easy. #id:59
+Objective\: Get at least {sky_rise_target} points in SkyRise #id:5a

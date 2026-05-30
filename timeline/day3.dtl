@@ -1,15 +1,15 @@
-clark: I got a text message from a person I have saved as "Mr. Robinson"
-clark: I think he's my boss
-robinson: Mr. Clark, you've been absent from work for several months without giving any sign of life.
-robinson: You left me with no choice but to fire you.
-clark: Yeah, sure
-robinson: Clark, you were a really good salesman. One of the best, in fact. I was gonna name you "employee of the month"
-robinson: I don't know what happened to you, but I hope that, wherever you are right now, you're safe and sound
-clark: Tch, "employee of the month", he said
-clark: I don't need a goddamn medal from anyone
+clark: I got a text message from a person I have saved as "Mr. Robinson" #id:33
+clark: I think he's my boss #id:34
+robinson: Mr. Clark, you've been absent from work for several months without giving any sign of life. #id:35
+robinson: You left me with no choice but to fire you. #id:36
+clark: Yeah, sure #id:37
+robinson: Clark, you were a really good salesman. One of the best, in fact. I was gonna name you "employee of the month" #id:38
+robinson: I don't know what happened to you, but I hope that, wherever you are right now, you're safe and sound #id:39
+clark: Tch, "employee of the month", he said #id:3a
+clark: I don't need a goddamn medal from anyone #id:3b
 audio "res://sounds/bark.wav"
-clark: Shut up, Leon. Go outside or whatever if you wanna poop
-clark: Anyway, today I purchased a new title\: "Snake"
-clark: This one is a classic from my childhood
-clark: I'm willing to have a lot of fun with it
-Objective\: get at least {snake_target} points in Snake
+clark: Shut up, Leon. Go outside or whatever if you wanna poop #id:3c
+clark: Anyway, today I purchased a new title\: "Snake" #id:3d
+clark: This one is a classic from my childhood #id:3e
+clark: I'm willing to have a lot of fun with it #id:3f
+Objective\: get at least {snake_target} points in Snake #id:40
