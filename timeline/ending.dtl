@@ -1,0 +1,29 @@
+After several weeks, the landlord came to Clark's apartment to evict him.
+He didn't answer the door.
+No one lived there.
+The landlord called the police and they opened the door.
+What they found was...
+...disturbing.
+They found out Clark's body in bed.
+He looked extremely weak.
+He was hugged to what it used to be his GameStation 69
+"What a loser", the landlord said.
+Before leaving the apartment, the landlord saw something written on the wall using what appeared to be blood. It said\:
+"I NEEDED MORE"
+javi: Whoa, that was a bit strong.
+javi: Hello there! My name's Javi. The developer of what you just experienced.
+javi: Well, sorry if I traumatized you too much.
+javi: Writing has always been a great passion for me and so is gaming so I thought of combining both in this game.
+javi: Just to clarify, no dog or granny was harmed during the development of this game.
+javi: Just as a reminder, the game is open source and licensed under the GPL 3
+javi: You can check itch io page of the game, or its source code below
+label link_options
+- Check itch page
+	do Global.open_url("https://google.com")
+	jump link_options
+- Check source code
+	do Global.open_url("https://github.com/javiermoralesdev/INeedMore")
+	jump link_options
+- Return to main menu
+	javi: Once again, thank you por playing my game.
+	do Global.change_scene("main_menu")

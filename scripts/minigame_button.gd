@@ -40,3 +40,7 @@ func _on_minigame_image_pressed() -> void:
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_packed(scene)
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_TRANSLATION_CHANGED:
+		$VBoxContainer/MinigameLabel.text = title if Global.free_mode_day > day  else tr("locked")

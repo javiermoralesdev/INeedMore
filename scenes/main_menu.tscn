@@ -11,6 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://dtqtwwfna0u68" path="res://scenes/space_run/space_run.tscn" id="8_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://b4bu8klught4b" path="res://images/half_snake.png" id="9_flqon"]
 [ext_resource type="PackedScene" uid="uid://brc3346jfgtg3" path="res://scenes/snake/snake.tscn" id="10_rcqid"]
+[ext_resource type="Texture2D" uid="uid://c2ktojue7h5hp" path="res://images/half_sky_rise.png" id="11_7b55j"]
+[ext_resource type="PackedScene" uid="uid://bscrrlkfvxgjy" path="res://scenes/sky_rise/sky_rise.tscn" id="12_5pajh"]
+[ext_resource type="Texture2D" uid="uid://dj1prv1rpxxw3" path="res://images/half_final_battle.png" id="13_j7ex8"]
+[ext_resource type="PackedScene" uid="uid://owlvgklkxbab" path="res://scenes/final_battle/final_battle.tscn" id="14_a8gd2"]
+[ext_resource type="PackedScene" uid="uid://dbw1howwb1xtw" path="res://scenes/selector.tscn" id="15_5pajh"]
 
 [node name="MainMenu" type="Control" unique_id=552884757]
 layout_mode = 3
@@ -32,7 +37,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control" parent="UILayer" unique_id=1491656762]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -107,7 +111,7 @@ theme_override_fonts/font = ExtResource("2_ekxnf")
 theme_override_font_sizes/font_size = 65
 text = "mm_settings"
 
-[node name="SettingsButton2" parent="UILayer/MainMenu" unique_id=184322469 instance=ExtResource("1_l6cm7")]
+[node name="CreditsButton" parent="UILayer/MainMenu" unique_id=184322469 instance=ExtResource("1_l6cm7")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -136,12 +140,24 @@ text = "mm_exit"
 alignment = 0
 
 [node name="FreeModeMenu" type="Control" parent="UILayer" unique_id=1831952412]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="UILayer/FreeModeMenu" unique_id=1195668077]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 50
+text = "freemode_explain"
+horizontal_alignment = 1
 
 [node name="FlapSpaceButton" parent="UILayer/FreeModeMenu" unique_id=997258461 instance=ExtResource("4_8ln24")]
 layout_mode = 1
@@ -151,7 +167,7 @@ offset_right = -1114.0
 offset_bottom = -365.0
 day = 1
 minigame = ExtResource("5_rtw2f")
-title = "Flap Space"
+title = "FlapSpace"
 scene = ExtResource("6_oa1go")
 
 [node name="SpaceRunButton" parent="UILayer/FreeModeMenu" unique_id=1535636597 instance=ExtResource("4_8ln24")]
@@ -162,19 +178,55 @@ offset_right = -899.0
 offset_bottom = -8.0
 day = 2
 minigame = ExtResource("7_tbmy8")
-title = "Space Run"
+title = "SpaceRun"
 scene = ExtResource("8_lgwnu")
 
-[node name="SpaceRunButton2" parent="UILayer/FreeModeMenu" unique_id=1187643488 instance=ExtResource("4_8ln24")]
+[node name="SnakeButton" parent="UILayer/FreeModeMenu" unique_id=1187643488 instance=ExtResource("4_8ln24")]
 layout_mode = 1
-offset_left = 495.0
+offset_left = 530.0
 offset_top = 135.0
-offset_right = -621.0
+offset_right = -586.0
 offset_bottom = -350.0
 day = 3
 minigame = ExtResource("9_flqon")
 title = "Space Run"
 scene = ExtResource("10_rcqid")
+
+[node name="SkyRiseButton" parent="UILayer/FreeModeMenu" unique_id=566059340 instance=ExtResource("4_8ln24")]
+layout_mode = 1
+offset_left = 810.0
+offset_top = 477.0
+offset_right = -306.0
+offset_bottom = -8.0
+day = 4
+minigame = ExtResource("11_7b55j")
+title = "SkyRise"
+scene = ExtResource("12_5pajh")
+
+[node name="FinalBattle" parent="UILayer/FreeModeMenu" unique_id=1253083201 instance=ExtResource("4_8ln24")]
+layout_mode = 1
+offset_left = 1003.0
+offset_top = 143.0
+offset_right = -113.0
+offset_bottom = -342.0
+day = 5
+minigame = ExtResource("13_j7ex8")
+title = "FinalBattle"
+scene = ExtResource("14_a8gd2")
+
+[node name="FreeModeBack" parent="UILayer/FreeModeMenu" unique_id=130454644 instance=ExtResource("1_l6cm7")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -76.0
+offset_right = 254.0
+offset_bottom = 0.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 65
+text = "mm_back"
+alignment = 0
 
 [node name="SettingsMenu" type="Control" parent="UILayer" unique_id=890677618]
 visible = false
@@ -185,6 +237,63 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/SettingsMenu" unique_id=1658988367]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 89.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UILayer/SettingsMenu/VBoxContainer" unique_id=1984874238]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 90
+text = "mm_settings"
+horizontal_alignment = 1
+
+[node name="MusicSelector" parent="UILayer/SettingsMenu/VBoxContainer" unique_id=229069192 instance=ExtResource("15_5pajh")]
+layout_mode = 2
+setting_title = "set_mvolume"
+options = Array[String](["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"])
+value = 10
+
+[node name="SoundSelector" parent="UILayer/SettingsMenu/VBoxContainer" unique_id=1695643562 instance=ExtResource("15_5pajh")]
+layout_mode = 2
+setting_title = "set_svolume"
+options = Array[String](["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"])
+value = 10
+
+[node name="AmbientSelector" parent="UILayer/SettingsMenu/VBoxContainer" unique_id=900927953 instance=ExtResource("15_5pajh")]
+layout_mode = 2
+setting_title = "set_svolume"
+options = Array[String](["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"])
+value = 10
+
+[node name="LanguageSelector" parent="UILayer/SettingsMenu/VBoxContainer" unique_id=696769486 instance=ExtResource("15_5pajh")]
+layout_mode = 2
+setting_title = "set_lang"
+options = Array[String](["English", "Español"])
+
+[node name="FullscreenSelector" parent="UILayer/SettingsMenu/VBoxContainer" unique_id=604777578 instance=ExtResource("15_5pajh")]
+layout_mode = 2
+setting_title = "set_fullscreen"
+options = Array[String](["no", "yes"])
+value = 1
+
+[node name="SettingsBackButton" parent="UILayer/SettingsMenu" unique_id=1541986044 instance=ExtResource("1_l6cm7")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -76.0
+offset_right = 295.0
+offset_bottom = 0.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 65
+text = "mm_back"
+alignment = 0
+
 [node name="Credits" type="Control" parent="UILayer" unique_id=294211484]
 visible = false
 layout_mode = 3
@@ -194,11 +303,59 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Credits" type="Label" parent="UILayer/Credits" unique_id=873809831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 40
+text = "Created By Javier Morales
+
+Music by Patrick de Aretaga
+
+Beagle_Bark_Interior_Hard_Walls 08.wav by n_audioman -- https://freesound.org/s/325481/ -- License: Attribution 4.0
+
+Car Crash Elements Sideswipe 01 by PNMCarrieRailfan -- https://freesound.org/s/682371/ -- License: Attribution NonCommercial 4.0
+
+Padlock icon by Prosymbols Premuim
+"
+autowrap_mode = 2
+
+[node name="CreditsBackButton" parent="UILayer/Credits" unique_id=658595149 instance=ExtResource("1_l6cm7")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -76.0
+offset_right = 295.0
+offset_bottom = 0.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 65
+text = "mm_back"
+alignment = 0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=697672806]
 stream = ExtResource("4_wu84c")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="UILayer/MainMenu/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UILayer/MainMenu/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="UILayer/MainMenu/FreeModeButton" to="." method="_on_free_mode_button_pressed"]
+[connection signal="pressed" from="UILayer/MainMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="UILayer/MainMenu/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="UILayer/MainMenu/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UILayer/FreeModeMenu/FreeModeBack" to="." method="_on_free_mode_back_pressed"]
+[connection signal="value_changed" from="UILayer/SettingsMenu/VBoxContainer/MusicSelector" to="." method="change_settings"]
+[connection signal="value_changed" from="UILayer/SettingsMenu/VBoxContainer/SoundSelector" to="." method="change_settings"]
+[connection signal="value_changed" from="UILayer/SettingsMenu/VBoxContainer/AmbientSelector" to="." method="change_settings"]
+[connection signal="value_changed" from="UILayer/SettingsMenu/VBoxContainer/LanguageSelector" to="." method="change_settings"]
+[connection signal="value_changed" from="UILayer/SettingsMenu/VBoxContainer/FullscreenSelector" to="." method="change_settings"]
+[connection signal="pressed" from="UILayer/SettingsMenu/SettingsBackButton" to="." method="_on_settings_back_button_pressed"]
+[connection signal="pressed" from="UILayer/Credits/CreditsBackButton" to="." method="_on_credits_back_button_pressed"]

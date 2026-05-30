@@ -46,6 +46,7 @@ bus = &"Sound"
 
 [node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=1787069943]
 stream = ExtResource("5_ubxpr")
+bus = &"Sound"
 
 [connection signal="mouse_entered" from="VBoxContainer/MinigameImage" to="." method="_on_minigame_image_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/MinigameImage" to="." method="_on_minigame_image_pressed"]

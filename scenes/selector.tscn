@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dbw1howwb1xtw"]
+
+[ext_resource type="Script" uid="uid://bqnx76ahatyjj" path="res://scripts/selector.gd" id="1_6stev"]
+[ext_resource type="Texture2D" uid="uid://bww1qs5705urf" path="res://images/arrows/arrow_left.png" id="1_g5dyd"]
+[ext_resource type="FontFile" uid="uid://dixfiyijaq3al" path="res://fonts/Relicta-Light.otf" id="1_wj04o"]
+[ext_resource type="Texture2D" uid="uid://bf83t0wmybnuw" path="res://images/arrows/arrow_right.png" id="3_6stev"]
+[ext_resource type="AudioStream" uid="uid://ejtld5jrjk81" path="res://sounds/hover.wav" id="5_esnui"]
+[ext_resource type="AudioStream" uid="uid://0na84507p3mt" path="res://sounds/press.wav" id="6_buvdd"]
+
+[node name="Selector" type="VBoxContainer" unique_id=229069192]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6stev")
+
+[node name="SettingTitle" type="Label" parent="." unique_id=2138420383]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wj04o")
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1422710079]
+layout_mode = 2
+alignment = 1
+
+[node name="LeftButton" type="TextureButton" parent="HBoxContainer" unique_id=1537706951]
+layout_mode = 2
+texture_normal = ExtResource("1_g5dyd")
+
+[node name="DataLabel" type="Label" parent="HBoxContainer" unique_id=2115432203]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wj04o")
+theme_override_font_sizes/font_size = 25
+text = "Data"
+horizontal_alignment = 1
+
+[node name="RightButton" type="TextureButton" parent="HBoxContainer" unique_id=1877969522]
+layout_mode = 2
+texture_normal = ExtResource("3_6stev")
+
+[node name="HoverPlayer" type="AudioStreamPlayer" parent="." unique_id=1460815780]
+stream = ExtResource("5_esnui")
+bus = &"Sound"
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=626965523]
+stream = ExtResource("6_buvdd")
+bus = &"Sound"
+
+[connection signal="mouse_entered" from="HBoxContainer/LeftButton" to="." method="_hover"]
+[connection signal="pressed" from="HBoxContainer/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/RightButton" to="." method="_hover"]
+[connection signal="pressed" from="HBoxContainer/RightButton" to="." method="_on_right_button_pressed"]

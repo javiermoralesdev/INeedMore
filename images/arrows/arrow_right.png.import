@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lhbuk7ducryi"
-path="res://.godot/imported/flap_space.png-8a48ccb213b9e34e11d349808a419c12.ctex"
+uid="uid://bf83t0wmybnuw"
+path="res://.godot/imported/arrow_right.png-796c62145f23e56a30eea8407f3f19a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/flap_space.png"
-dest_files=["res://.godot/imported/flap_space.png-8a48ccb213b9e34e11d349808a419c12.ctex"]
+source_file="res://images/arrows/arrow_right.png"
+dest_files=["res://.godot/imported/arrow_right.png-796c62145f23e56a30eea8407f3f19a6.ctex"]
 
 [params]
 

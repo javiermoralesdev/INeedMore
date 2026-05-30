@@ -38,6 +38,7 @@ directories/dch_directory={
 "claire": "res://characters/claire.dch",
 "clark": "res://characters/clark.dch",
 "evelyn": "res://characters/evelyn.dch",
+"javi": "res://timeline/javi.dch",
 "leon": "res://characters/leon.dch",
 "robinson": "res://characters/robinson.dch"
 }
@@ -48,6 +49,7 @@ directories/dtl_directory={
 "day4": "res://timeline/day4.dtl",
 "day5": "res://timeline/day5.dtl",
 "day6": "res://timeline/day6.dtl",
+"ending": "res://timeline/ending.dtl",
 "interlude": "res://timeline/interlude.dtl"
 }
 layout/style_directory={}

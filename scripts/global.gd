@@ -25,9 +25,11 @@ var skyrise_high_score: int = 0
 var final_battle_high_score: int = 0
 var day: int = 1
 var free_mode_day: int = 1
-var music_volume: int = 0
-var sound_volume: int = 0
+var music_volume: float = 0
+var sound_volume: float = 0
+var ambient_volume: float = 0
 var fullscreen: bool = false
+var language: String = ""
 
 func _ready() -> void:
 	load_game()
@@ -49,6 +51,8 @@ func save_game() -> void:
 	data.sound_volume = sound_volume
 	data.music_volume = music_volume
 	data.fullscreen = fullscreen
+	data.ambient_volume = ambient_volume
+	data.language = language
 	ResourceSaver.save(data, SAVE_PATH)
 
 func load_game() -> void:
@@ -66,8 +70,36 @@ func load_game() -> void:
 	sound_volume = data.sound_volume
 	music_volume = data.music_volume
 	fullscreen = data.fullscreen
+	ambient_volume = data.ambient_volume
+	language = data.language
+	update_settings(music_volume, sound_volume, ambient_volume, fullscreen, language)
 
 func go_to_minigame(target: String) -> void:
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://scenes/" + target +  "/" + target + ".tscn")
+
+func update_settings(p_music_volume: float, p_sound_volume: float, p_ambient_volume: float, p_fullscreen: bool, p_language: String) -> void:
+	sound_volume = p_sound_volume
+	music_volume = p_music_volume
+	ambient_volume = p_ambient_volume
+	fullscreen = p_fullscreen
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(music_volume))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"), linear_to_db(sound_volume))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Ambient"), linear_to_db(ambient_volume))
+	if fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	language = p_language
+	if language != "":
+		TranslationServer.set_locale(language)
+	
+
+func open_url(url: String) -> void:
+	OS.shell_open(url)
+
+func change_scene(scene: String) -> void:
+	Transition.transition()
+	await Transition.transition_finished
+	get_tree().change_scene_to_file("res://scenes/" + scene + ".tscn")

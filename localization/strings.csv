@@ -14,16 +14,21 @@ day3,Chapter 3 - Erosion,Chapter 3 - Erosión
 day4,Chapter 4 - Hollow,Chapter 4 - Vacío
 day5,Chapter 5 - Collapse,Chapter 5 - Colapso
 day6,Chapter 6 - Static,Chapter 6 - Estática
-mm_play,New Game,
-mm_continue,Continue,
-mm_credits,Credits,
-mm_free,Free Mode,
-mm_settings,Settings,
-mm_exit,Exit,
-set_mvolume,Music Volume,
-set_avolume,Ambient Volume,
-set_svolume,Sound Volume,
-set_fullscreen,Fullscreen,
-freemode_explain,Play any minigame you want forever,
-locked,Locked,
-chapter,Chapter
+mm_play,New Game,Nueva Partida
+mm_continue,Continue,Continuar
+mm_credits,Credits,Créditos
+mm_free,Free Mode,Modo Libre
+mm_settings,Settings,Opciones
+mm_exit,Exit,Salir
+set_mvolume,Music Volume,Volumen Música
+set_avolume,Ambient Volume,Volumen Ambiente
+set_svolume,Sound Volume,Volumen Sonidos
+set_fullscreen,Fullscreen,Pantalla Completa
+set_lang,Language,Idioma
+freemode_explain,Play any minigame you want forever,Juega por siempre a tu minijuego favorito
+locked,Locked,Bloqueado
+chapter,Chapter,Capítulo
+mm_back,Back,Atrás
+yes,Yes,Sí
+no,No,No
+skip,Skip,Omitir
