@@ -11,6 +11,11 @@ func _ready() -> void:
 	$UILayer/SettingsMenu/VBoxContainer/AmbientSelector.change_value(Global.ambient_volume * 10)
 	$UILayer/SettingsMenu/VBoxContainer/FullscreenSelector.change_value(1 if Global.fullscreen else 0)
 	$UILayer/SettingsMenu/VBoxContainer/LanguageSelector.change_value(Global.get_locale_index(TranslationServer.get_locale()) if Global.language == "" else Global.get_locale_index(Global.language))
+	$UILayer/Splash.visible = true
+	var tween_splash: Tween = get_tree().create_tween()
+	tween_splash.tween_property($UILayer/Splash, "modulate", Color(0, 0, 0, 0), 1)
+	await tween_splash.finished
+	$UILayer/Splash.queue_free()
 
 func _on_play_button_pressed() -> void:
 	Transition.transition()

@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dj1prv1rpxxw3" path="res://images/half_final_battle.png" id="13_j7ex8"]
 [ext_resource type="PackedScene" uid="uid://owlvgklkxbab" path="res://scenes/final_battle/final_battle.tscn" id="14_a8gd2"]
 [ext_resource type="PackedScene" uid="uid://dbw1howwb1xtw" path="res://scenes/selector.tscn" id="15_5pajh"]
+[ext_resource type="Texture2D" uid="uid://h3nnfj3nwrrg" path="res://images/banner.png" id="16_j7ex8"]
 
 [node name="MainMenu" type="Control" unique_id=552884757]
 layout_mode = 3
@@ -338,6 +339,17 @@ theme_override_fonts/font = ExtResource("2_ekxnf")
 theme_override_font_sizes/font_size = 65
 text = "mm_back"
 alignment = 0
+
+[node name="Splash" type="TextureRect" parent="UILayer" unique_id=1130130590]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_j7ex8")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=697672806]
 stream = ExtResource("4_wu84c")

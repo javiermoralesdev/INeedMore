@@ -14,7 +14,7 @@ config/name="I Need More"
 run/main_scene="uid://b1msfd0qhwqba"
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
-boot_splash/image="uid://cu7hksg3m7g5r"
+boot_splash/image="uid://h3nnfj3nwrrg"
 config/icon="uid://cla0jp4lghlut"
 
 [audio]

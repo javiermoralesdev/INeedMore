@@ -3,6 +3,7 @@
 .nomedia
 /android/
 builds/
+*.keystore
 
 # Godot-specific ignores
 .import/

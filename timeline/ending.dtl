@@ -19,7 +19,7 @@ javi: Just as a reminder, the game is open source and licensed under the GPL 3 #
 javi: You can check itch io page of the game, or its source code below #id:6d
 label link_options #id:6e
 - Check itch page #id:6f
-	do Global.open_url("https://google.com")
+	do Global.open_url("https://javiermorales06.itch.io/i-need-more")
 	jump link_options
 - Check source code #id:70
 	do Global.open_url("https://github.com/javiermoralesdev/INeedMore")
