@@ -3,8 +3,8 @@
 [ext_resource type="Theme" uid="uid://0krn8qcjxp7" path="res://themes/custom_button.tres" id="1_qw48a"]
 [ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="2_bfr1r"]
 [ext_resource type="Script" uid="uid://c84k07n3mlvr3" path="res://scripts/custom_button.gd" id="3_32hcy"]
-[ext_resource type="AudioStream" uid="uid://ejtld5jrjk81" path="res://sounds/hover.wav" id="4_qw48a"]
-[ext_resource type="AudioStream" uid="uid://0na84507p3mt" path="res://sounds/press.wav" id="5_8n5nm"]
+[ext_resource type="AudioStream" uid="uid://fvb17tiklbqg" path="res://sounds/hover.ogg" id="4_qw48a"]
+[ext_resource type="AudioStream" uid="uid://dv35u8unacdwi" path="res://sounds/press.ogg" id="5_8n5nm"]
 
 [node name="CustomButton" type="Button" unique_id=403282519]
 offset_right = 122.0

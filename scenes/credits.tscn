@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://djmaupcrtbylo"]
 
-[ext_resource type="AudioStream" uid="uid://l83h4bg74y6y" path="res://music/Paul Pitman - Moonlight Sonata, Op. 27 No. 2 - I. Adagio sostenuto.mp3" id="1_0bpdh"]
 [ext_resource type="Script" uid="uid://c4ijltkqh6wdh" path="res://scripts/credits.gd" id="1_2ckv8"]
+[ext_resource type="AudioStream" uid="uid://dp0texi6wvshj" path="res://music/moonlight.ogg" id="2_2ckv8"]
 
 [node name="Credits" type="CanvasLayer" unique_id=378332280]
 script = ExtResource("1_2ckv8")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=50439587]
-stream = ExtResource("1_0bpdh")
+stream = ExtResource("2_2ckv8")
 volume_db = 10.0
 bus = &"Music"
 

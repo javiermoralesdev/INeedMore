@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxn0ajf33ncj3" path="res://scripts/flap_space/flap_space_player.gd" id="1_i42r8"]
 [ext_resource type="Texture2D" uid="uid://btnhgpstdplnc" path="res://sprites/flap_space/Jump (32x32).png" id="1_r54nq"]
-[ext_resource type="AudioStream" uid="uid://ca1tlaiiof8jt" path="res://sounds/flap.wav" id="3_px7ft"]
+[ext_resource type="AudioStream" uid="uid://by0ey0sj7iwi3" path="res://sounds/flap.ogg" id="3_px7ft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i42r8"]
 size = Vector2(16, 28)

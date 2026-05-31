@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://djyfrlkgcr2ld" path="res://sprites/backgrounds/Yellow.png" id="4_vcpmr"]
 [ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="4_y8y34"]
 [ext_resource type="AudioStream" uid="uid://du6h6xjadvftj" path="res://music/SkyRise.ogg" id="7_3rjpy"]
-[ext_resource type="AudioStream" uid="uid://bgtqbom2pqq3c" path="res://sounds/apple_pickup.wav" id="8_w118u"]
-[ext_resource type="AudioStream" uid="uid://ca1tlaiiof8jt" path="res://sounds/flap.wav" id="9_d8el6"]
+[ext_resource type="AudioStream" uid="uid://c7648tx7sgmll" path="res://sounds/apple_pickup.ogg" id="8_w118u"]
+[ext_resource type="AudioStream" uid="uid://by0ey0sj7iwi3" path="res://sounds/flap.ogg" id="9_d8el6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r524g"]
 size = Vector2(534, 36)

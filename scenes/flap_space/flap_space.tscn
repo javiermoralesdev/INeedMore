@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://13dy0apv0pdl" path="res://scenes/background_texture.tscn" id="3_swklx"]
 [ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="5_tvtws"]
 [ext_resource type="PackedScene" uid="uid://dhib010dlwwa4" path="res://scenes/game_over_screen.tscn" id="6_mhgp2"]
-[ext_resource type="AudioStream" uid="uid://bgtqbom2pqq3c" path="res://sounds/apple_pickup.wav" id="6_swklx"]
+[ext_resource type="AudioStream" uid="uid://c7648tx7sgmll" path="res://sounds/apple_pickup.ogg" id="6_swklx"]
 [ext_resource type="AudioStream" uid="uid://ckt8ilu74wkmt" path="res://music/FlapSpace.ogg" id="9_cko7i"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qnmmh"]

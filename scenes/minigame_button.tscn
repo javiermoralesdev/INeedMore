@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://dixfiyijaq3al" path="res://fonts/Relicta-Light.otf" id="1_n7imk"]
 [ext_resource type="Script" uid="uid://dolp86psjbc5m" path="res://scripts/minigame_button.gd" id="1_uwtbt"]
 [ext_resource type="Texture2D" uid="uid://c5707es46qjml" path="res://images/half_locked.png" id="2_n7imk"]
-[ext_resource type="AudioStream" uid="uid://ejtld5jrjk81" path="res://sounds/hover.wav" id="4_pe80s"]
-[ext_resource type="AudioStream" uid="uid://0na84507p3mt" path="res://sounds/press.wav" id="5_ubxpr"]
+[ext_resource type="AudioStream" uid="uid://fvb17tiklbqg" path="res://sounds/hover.ogg" id="4_pe80s"]
+[ext_resource type="AudioStream" uid="uid://dv35u8unacdwi" path="res://sounds/press.ogg" id="5_ubxpr"]
 
 [node name="MinigameButton" type="Control" unique_id=997258461]
 layout_mode = 3

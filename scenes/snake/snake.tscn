@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://d0kut1x6xv7lh" path="res://scripts/snake/snake.gd" id="1_4ska3"]
 [ext_resource type="FontFile" uid="uid://dtyubupcquv56" path="res://fonts/game_over.ttf" id="2_uqw23"]
 [ext_resource type="PackedScene" uid="uid://dhib010dlwwa4" path="res://scenes/game_over_screen.tscn" id="3_h1wbu"]
-[ext_resource type="AudioStream" uid="uid://bgtqbom2pqq3c" path="res://sounds/apple_pickup.wav" id="4_reko3"]
-[ext_resource type="AudioStream" uid="uid://ca1tlaiiof8jt" path="res://sounds/flap.wav" id="5_ai5so"]
+[ext_resource type="AudioStream" uid="uid://c7648tx7sgmll" path="res://sounds/apple_pickup.ogg" id="4_bxd63"]
+[ext_resource type="AudioStream" uid="uid://by0ey0sj7iwi3" path="res://sounds/flap.ogg" id="5_aj64b"]
 [ext_resource type="AudioStream" uid="uid://btjqsvuw6of78" path="res://music/Snake.ogg" id="6_0va0l"]
 [ext_resource type="PackedScene" uid="uid://13dy0apv0pdl" path="res://scenes/background_texture.tscn" id="7_0va0l"]
 [ext_resource type="Texture2D" uid="uid://buwo3l6xa4hxv" path="res://sprites/backgrounds/Green.png" id="8_bxd63"]
@@ -81,11 +81,11 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="FoodPlayer" type="AudioStreamPlayer" parent="." unique_id=542870612]
-stream = ExtResource("4_reko3")
+stream = ExtResource("4_bxd63")
 bus = &"Sound"
 
 [node name="MovePlayer" type="AudioStreamPlayer" parent="." unique_id=729080329]
-stream = ExtResource("5_ai5so")
+stream = ExtResource("5_aj64b")
 bus = &"Sound"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2058622463]
